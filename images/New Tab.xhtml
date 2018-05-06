@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!DOCTYPE html [
+  <!ENTITY % newTabDTD SYSTEM "chrome://browser/locale/newTab.dtd">
+  %newTabDTD;
+  <!ENTITY % browserDTD SYSTEM "chrome://browser/locale/browser.dtd">
+  %browserDTD;
+  <!ENTITY % globalDTD SYSTEM "chrome://global/locale/global.dtd">
+  %globalDTD;
+]>
+<html xmlns="http://www.w3.org/1999/xhtml" hasBrowserHandlers="true">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>New Tab</title>
+
+  <link rel="stylesheet" type="text/css" media="all" href="New%20Tab_files/global.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="New%20Tab_files/contentSearchUI.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="New%20Tab_files/newTab_002.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="New%20Tab_files/newTab.css" />
+</head>
+
+<body dir="ltr">
+  <div id="newtab-customize-overlay"></div>
+
+  <div class="newtab-customize-panel-container">
+    <div id="newtab-customize-panel" orient="vertical">
+        <div id="newtab-customize-panel-anchor"></div>
+        <div id="newtab-customize-panel-inner-wrapper">
+          <div id="newtab-customize-title" class="newtab-customize-panel-item">
+            <label>NEW TAB CONTROLS</label>
+          </div>
+
+          <div class="newtab-customize-complex-option">
+            <div id="newtab-customize-classic" class="newtab-customize-panel-superitem newtab-customize-panel-item selectable" selected="true">
+                <label>Show your top sites</label>
+            </div>
+            <div id="newtab-customize-enhanced" class="newtab-customize-panel-subitem" selected="true">
+                <label class="checkbox"></label>
+                <label>Include suggested sites</label>
+            </div>
+          </div>
+          <div id="newtab-customize-blank" class="newtab-customize-panel-item selectable">
+            <label>Show blank page</label>
+          </div>
+          <div id="newtab-customize-learn" class="newtab-customize-panel-item">
+            <label>Learn about New Tab</label>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="newtab-intro-mask">
+    <div id="newtab-intro-modal">
+      <div id="newtab-intro-header"></div>
+      <div id="newtab-intro-body">
+        <div id="newtab-intro-content">
+          <div id="newtab-intro-text">
+            <p></p><p></p>
+          </div>
+        </div>
+        <div id="newtab-intro-buttons">
+          <input type="button" id="newtab-intro-button" default="true" onclick="gIntro._exitIntro()" />
+        </div>
+      </div>
+      <div id="newtab-intro-footer">
+        <ul>
+          <li id="newtab-intro-link"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div id="newtab-vertical-margin">
+      <div id="newtab-margin-top"></div>
+        <div id="newtab-margin-undo-container">
+          <div id="newtab-undo-container" undo-disabled="true">
+            <label id="newtab-undo-label">Thumbnail removed.</label>
+            <button id="newtab-undo-button" tabindex="-1" class="newtab-undo-button">Undo.</button>
+            <button id="newtab-undo-restore-button" tabindex="-1" class="newtab-undo-button">Restore All.</button>
+            <button id="newtab-undo-close-button" tabindex="-1" title="Hide"></button>
+          </div>
+        </div>
+
+      <div id="newtab-search-container">
+        <div id="newtab-search-form">
+          <div id="newtab-search-icon"></div>
+          <input type="text" name="q" id="newtab-search-text" aria-label="Search query" maxlength="256" dir="auto" autocomplete="off" aria-autocomplete="true" aria-controls="searchSuggestionTable" aria-expanded="false" placeholder="Search" />
+          <input type="button" id="newtab-search-submit" value="" aria-label="Submit search" />
+        <table hidden="" id="searchSuggestionTable" class="contentSearchSuggestionTable" role="presentation"><tr class="contentSearchHeaderRow"><td class="contentSearchHeader" id="contentSearchDefaultEngineHeader"><img src="blob:null/811a291a-f081-44a7-9007-92de26fe1f9e#-moz-resolution=16,16" />Google Search</td></tr><tr class="contentSearchSuggestionsContainer"><td class="contentSearchSuggestionsContainer"><table class="contentSearchSuggestionsList" role="listbox"></table></td></tr><table class="contentSearchOneOffsTable contentSearchSuggestionsContainer" role="group"><tr class="contentSearchHeaderRow"><td class="contentSearchHeader" id="contentSearchSearchWithHeader">Search with:</td></tr></table><button class="contentSearchSettingsButton contentSearchHeaderRow contentSearchHeader" id="contentSearchSettingsButton" aria-selected="false">Change Search Settings</button></table></div>
+      </div>
+
+      <div id="newtab-horizontal-margin">
+        <div class="newtab-side-margin"></div>
+
+        <div id="newtab-grid" style="width: 1240px; max-width: 1551px; height: 802px; max-height: 800px;"><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="HotResume.com.au
+http://localhost/resumebuilder/createExeResume.php" href="http://localhost/resumebuilder/createExeResume.php">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=http%3A%2F%2Flocalhost%2Fresumebuilder%2FcreateExeResume.php&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">localhost</span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="file:///var/www/html/gambling/your-project/index%20-3.html#" href="file:///var/www/html/gambling/your-project/index%20-3.html#">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=file%3A%2F%2F%2Fvar%2Fwww%2Fhtml%2Fgambling%2Fyour-project%2Findex%2520-3.html%23&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title"></span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="PLAY ONLINE
+http://192.168.0.4/game/index.php" href="http://192.168.0.4/game/index.php">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=http%3A%2F%2F192.168.0.4%2Fgame%2Findex.php&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">192.168.0.4</span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="My Tasks — Projects
+http://pm.weberysoft.com/public/index.php" href="http://pm.weberysoft.com/public/index.php">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=http%3A%2F%2Fpm.weberysoft.com%2Fpublic%2Findex.php&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">pm.weberysoft.com</span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Another Website
+http://192.168.0.6/test/animation.html" href="http://192.168.0.6/test/animation.html">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=http%3A%2F%2F192.168.0.6%2Ftest%2Fanimation.html&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">192.168.0.6</span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="WI 140-all out (19.2 Ovs) vs IND 185/6 (20.0 Ovs) (Jason Holder 13(9) ) | India vs West Indies, 10th Match - Live Score, Commentary - Cricbuzz
+http://www.cricbuzz.com/live-cricket-scores/15814/ind-vs-wi-10th-match-icc-world-t20-warm-up-matches-2016" href="http://www.cricbuzz.com/live-cricket-scores/15814/ind-vs-wi-10th-match-icc-world-t20-warm-up-matches-2016">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=http%3A%2F%2Fwww.cricbuzz.com%2Flive-cricket-scores%2F15814%2Find-vs-wi-10th-match-icc-world-t20-warm-up-matches-2016&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">cricbuzz.com</span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Si digital - website design and digital marketing agency in Hampshire UK
+http://sidigital.co/" href="http://sidigital.co/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=http%3A%2F%2Fsidigital.co%2F&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">sidigital.co</span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Your Designs – Canva
+https://www.canva.com/" href="https://www.canva.com/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=https%3A%2F%2Fwww.canva.com%2F&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">canva.com</span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Deeniyat
+http://dn.isuf.co.uk/home.php" href="http://dn.isuf.co.uk/home.php">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=http%3A%2F%2Fdn.isuf.co.uk%2Fhome.php&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">dn.isuf.co.uk</span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="(2) AskGamblers - Reviews of Online Casinos &amp; Games by Real Players
+http://www.askgamblers.com/" href="http://www.askgamblers.com/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=http%3A%2F%2Fwww.askgamblers.com%2F&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">askgamblers.com</span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Template :: Metro UI CSS - The front-end framework for developing projects on the web in Windows Metro Style
+https://metroui.org.ua/templates/admin-sidebar-appbar.html#" href="https://metroui.org.ua/templates/admin-sidebar-appbar.html#">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=https%3A%2F%2Fmetroui.org.ua%2Ftemplates%2Fadmin-sidebar-appbar.html%23&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">metroui.org.ua</span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history" pinned="true"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="http://s621935804.websitehome.co.uk/" href="http://s621935804.websitehome.co.uk/">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=http%3A%2F%2Fs621935804.websitehome.co.uk%2F&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">s621935804.websitehome.co.uk</span></a><input type="button" title="Unpin this site" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="user_1.jpg (JPEG Image, 100 × 100 pixels)
+http://bootdey.com/img/Content/user_1.jpg" href="http://bootdey.com/img/Content/user_1.jpg">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=http%3A%2F%2Fbootdey.com%2Fimg%2FContent%2Fuser_1.jpg&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">bootdey.com</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="Dashboard
+https://www.browserstack.com/start?utm_source=firefox&amp;utm_medium=extension&amp;utm_campaign=quick-launch&amp;timestamp=1466430591828#os=ios&amp;os_version=9.3&amp;device=iPad+Air+2&amp;zoom_to_fit=true&amp;full_screen=true&amp;url=http%3A%2F%2Flocalhost%2F_gambling%2Fyour-project%2Fsports.php%3Fcat%3DOnline-Sport%2FOS&amp;speed=1&amp;host_ports=google.com%2C80%2C0" href="https://www.browserstack.com/start?utm_source=firefox&amp;utm_medium=extension&amp;utm_campaign=quick-launch&amp;timestamp=1466430591828#os=ios&amp;os_version=9.3&amp;device=iPad+Air+2&amp;zoom_to_fit=true&amp;full_screen=true&amp;url=http%3A%2F%2Flocalhost%2F_gambling%2Fyour-project%2Fsports.php%3Fcat%3DOnline-Sport%2FOS&amp;speed=1&amp;host_ports=google.com%2C80%2C0">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=https%3A%2F%2Fwww.browserstack.com%2Fstart%3Futm_source%3Dfirefox%26utm_medium%3Dextension%26utm_campaign%3Dquick-launch%26timestamp%3D1466430591828%23os%3Dios%26os_version%3D9.3%26device%3DiPad%2BAir%2B2%26zoom_to_fit%3Dtrue%26full_screen%3Dtrue%26url%3Dhttp%253A%252F%252Flocalhost%252F_gambling%252Fyour-project%252Fsports.php%253Fcat%253DOnline-Sport%252FOS%26speed%3D1%26host_ports%3Dgoogle.com%252C80%252C0&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">browserstack.com</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div><div class="newtab-cell"><div class="newtab-site" draggable="true" type="history"><span class="newtab-sponsored">SPONSORED</span><a class="newtab-link" title="http://m.yepme.com/men/footwear/men-shoes/29/1588?&amp;PromositeID=95&amp;_clk=imi16th%20June&amp;utm_source=SMS&amp;utm_medium=IMI&amp;utm_campaign=Men_199shoes_16June&amp;utm_term=imi16th%20June" href="http://m.yepme.com/men/footwear/men-shoes/29/1588?&amp;PromositeID=95&amp;_clk=imi16th%20June&amp;utm_source=SMS&amp;utm_medium=IMI&amp;utm_campaign=Men_199shoes_16June&amp;utm_term=imi16th%20June">  <span class="newtab-thumbnail" style="background-image: url(&quot;moz-page-thumb://thumbnail?url=http%3A%2F%2Fm.yepme.com%2Fmen%2Ffootwear%2Fmen-shoes%2F29%2F1588%3F%26PromositeID%3D95%26_clk%3Dimi16th%2520June%26utm_source%3DSMS%26utm_medium%3DIMI%26utm_campaign%3DMen_199shoes_16June%26utm_term%3Dimi16th%2520June&quot;);"></span>  <span class="newtab-thumbnail enhanced-content"></span>  <span class="newtab-title">yepme.com</span></a><input type="button" title="Pin this site at its current position" class="newtab-control newtab-control-pin" /><input type="button" title="Remove this site" class="newtab-control newtab-control-block" /><span class="newtab-suggested"></span></div></div></div>
+
+        <div class="newtab-side-margin"></div>
+      </div>
+
+      <div id="newtab-margin-bottom"></div>
+  </div>
+      <input type="button" id="newtab-customize-button" dir="ltr" title="Customize your New Tab page" />
+</body>
+<script type="text/javascript;version=1.8" src="New%20Tab_files/contentSearchUI.js"></script>
+<script type="text/javascript;version=1.8" src="New%20Tab_files/newTab.js"></script>
+</html>

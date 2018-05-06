@@ -1,0 +1,9 @@
+[03-Mar-2018 22:16:48 Europe/London] PHP Notice:  A session had already been started - ignoring session_start() in /home/thebettingtime/public_html/config.php on line 9
+[03-Mar-2018 22:16:48 Europe/London] PHP Warning:  array_merge(): Argument #2 is not an array in /home/thebettingtime/public_html/4j8AtVcObnsY5sSz101xA0VVhyqjvuLVyGIvbgN2/lib/filemanager/dialog.php on line 135
+[03-Mar-2018 22:16:48 Europe/London] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/thebettingtime/public_html/4j8AtVcObnsY5sSz101xA0VVhyqjvuLVyGIvbgN2/lib/filemanager/dialog.php on line 136
+[03-Mar-2018 22:16:59 Europe/London] PHP Notice:  A session had already been started - ignoring session_start() in /home/thebettingtime/public_html/config.php on line 9
+[03-Mar-2018 22:16:59 Europe/London] PHP Warning:  array_merge(): Argument #2 is not an array in /home/thebettingtime/public_html/4j8AtVcObnsY5sSz101xA0VVhyqjvuLVyGIvbgN2/lib/filemanager/dialog.php on line 135
+[03-Mar-2018 22:16:59 Europe/London] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/thebettingtime/public_html/4j8AtVcObnsY5sSz101xA0VVhyqjvuLVyGIvbgN2/lib/filemanager/dialog.php on line 136
+[03-Mar-2018 22:16:59 Europe/London] PHP Notice:  A session had already been started - ignoring session_start() in /home/thebettingtime/public_html/config.php on line 9
+[03-Mar-2018 22:16:59 Europe/London] PHP Warning:  array_merge(): Argument #2 is not an array in /home/thebettingtime/public_html/4j8AtVcObnsY5sSz101xA0VVhyqjvuLVyGIvbgN2/lib/filemanager/dialog.php on line 135
+[03-Mar-2018 22:16:59 Europe/London] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/thebettingtime/public_html/4j8AtVcObnsY5sSz101xA0VVhyqjvuLVyGIvbgN2/lib/filemanager/dialog.php on line 136

@@ -1,0 +1,147 @@
+# Turn rewrite engine on
+
+RewriteEngine on
+
+
+
+
+
+# Rewrite for direct URL (ex. index.php)
+
+RewriteRule ^home/ index.php [L]
+
+RewriteRule ^bonus/ bonus.php [L]
+
+RewriteRule ^sports/ sports.php [L]
+
+RewriteRule ^sadari/ sadari.php [L]
+
+RewriteRule ^mini-game/ minigame.php [L]
+
+RewriteRule ^complaints/ complaint.php [L]
+
+RewriteRule ^notice/ notice.php [L]
+
+RewriteRule ^submit-complaint/ submitComplaint.php [L]
+
+
+
+# Rewrite for direct URL (ex. sports category)
+
+
+
+RewriteRule ^online-sports/ sports.php?cat=OS [L]
+
+RewriteRule ^newest-sports/ sports.php?cat=NS [L]
+
+RewriteRule ^verified-sports/ sports.php?cat=VS [L]
+
+RewriteRule ^bitcoin-sports/ sports.php?cat=BS [L]
+
+RewriteRule ^mobile-sports/ sports.php?cat=MS [L]
+
+RewriteRule ^livebetting-sports/ sports.php?cat=LS [L]
+
+
+
+
+
+
+
+# Rewrite for direct URL (ex. bonus category)
+
+
+
+RewriteRule ^welcome-bonus/ bonus.php?cat=WB [L]
+
+RewriteRule ^first-deposit-bonus/ bonus.php?cat=FSD [L]
+
+RewriteRule ^every-time-bonus/ bonus.php?cat=ETB [L]
+
+RewriteRule ^rolling-bonus/ bonus.php?cat=RB [L]
+
+RewriteRule ^free-money/ bonus.php?cat=FM [L]
+
+RewriteRule ^combo-bonus/ bonus.php?cat=CB [L]
+
+RewriteRule ^rebate-bonus/ bonus.php?cat=REB [L]
+
+RewriteRule ^other-bonus/ bonus.php?cat=OB [L]
+
+
+
+
+
+# Rewrite for direct URL (ex. complaint category)
+
+
+
+RewriteRule ^complaint-open/ complaint.php?catComp=OP [L]
+
+RewriteRule ^complaint-resolve/ complaint.php?catComp=RE [L]
+
+RewriteRule ^complaint-unsolved/ complaint.php?catComp=UN [L]
+
+RewriteRule ^complaint-payment-issues/ complaint.php?catComp=PI [L]
+
+RewriteRule ^complaint-bonus-issues/ complaint.php?catComp=BI [L]
+
+RewriteRule ^complaint-other-issues/ complaint.php?catComp=OI [L]
+
+
+
+# Rewrite for direct URL (ex. news and blog category)
+
+
+
+RewriteRule ^site-news/ news.php?cat=SN [L]
+
+RewriteRule ^blog/ news.php?cat=B [L]
+
+
+
+
+
+
+
+# Rewrite for direct URL (ex. news and blog category)
+
+
+
+RewriteRule ^notice-details/([0-9a-zA-Z_-]+)/ notice.php?notice=$1 [L]
+
+
+
+#notice.php?notice=2
+
+
+
+# Rewrite for direct URL (ex. sportsDetails)
+
+
+
+RewriteRule ^sports-details/([0-9]+)/ sportsDetail.php?detail=$1+$name=$2 [L]
+
+RewriteRule ^mini-game-details/([0-9]+)/ miniGameDetail.php?detail=$1+$name=$2 [L]
+
+RewriteRule ^sadari-details/([0-9]+)/ sadariDetails.php?detail=$1+$name=$2 [L]
+
+RewriteRule ^bonus-details/([0-9]+)/ bonusDetail.php?detail=$1+$name=$2 [L]
+
+RewriteRule ^news-details/([0-9]+)/ newsDetail.php?detail=$1+$name=$2 [L]
+
+RewriteRule ^complaint-details/([0-9]+)/ complaintsDetail.php?detail=$1 [L]
+
+
+
+
+
+#sportsDetail.php?id=<?php echo $value['id'];?>&name=<?php echo str_replace(' ', '-', $value['sportsName']);?>
+
+#sportsDetail.php?detail=Drake-Casino%2B26
+
+#sadariDetails.php?detail=QmV0S2luZ3MrMQ%3D%3D
+
+#bonusDetail.php?detail=Ask-gambler%2B6
+
+#http://localhost/_gambling/your-project/complaintsDetail.php?detail=3

@@ -1,0 +1,58 @@
+.addBonusDetailsLabel, .addBonusDetailsValue{
+	width:48%;
+	float: left;
+	margin: 10px;
+}
+.field-wrap select{
+	width:100%;
+	padding: 5px;
+	border: 1px solid #e3e3e3;
+	margin-bottom: 13px;
+	background: #fff;
+}
+.field-wrap select option{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.w-20{
+	width:20%;
+	float: left;
+	padding-top: 10px;
+	text-transform: uppercase;
+}
+.w-80{
+	width:80%;
+	float: left;
+}
+.w-20 label{
+	font-size: 14px;
+}
+
+.replyButton{
+	color:#fff !important;
+	background:cornflowerblue;
+	padding:5px;
+}
+ul.pagination1 {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination1 li {display: inline;}
+
+ul.pagination1 li a {
+    color: #fff;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: red;
+    border: 1px solid #fff;
+}
+ul.pagination1 li a.active,
+ul.pagination1 li a:hover,
+ul.pagination1 li a:focus{
+	background-color: #fff;
+    border: 1px solid red;
+    color:red;
+}
