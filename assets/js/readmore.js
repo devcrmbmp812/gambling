@@ -72,6 +72,7 @@
   }
 
   function setBoxHeights(element) {
+   
     var el = element.clone().css({
           height: 'auto',
           width: element.width(),
@@ -158,16 +159,16 @@
 
     this.init();
 
-    // IE8 chokes on `window.addEventListener`, so need to test for support.
-    if (window.addEventListener) {
-      // Need to resize boxes when the page has fully loaded.
-      window.addEventListener('load', resizeBoxes);
-      window.addEventListener('resize', resizeBoxes);
-    }
-    else {
-      window.attachEvent('load', resizeBoxes);
-      window.attachEvent('resize', resizeBoxes);
-    }
+    //IE8 chokes on `window.addEventListener`, so need to test for support.
+    // if (window.addEventListener) {
+    //   // Need to resize boxes when the page has fully loaded.
+    //   window.addEventListener('load', resizeBoxes);
+    //   window.addEventListener('resize', resizeBoxes);
+    // }
+    // else {
+    //   window.attachEvent('load', resizeBoxes);
+    //   window.attachEvent('resize', resizeBoxes);
+    // }
   }
 
 
@@ -219,6 +220,7 @@
     },
 
     toggle: function(trigger, element, event) {
+      
       if (event) {
         event.preventDefault();
       }
@@ -238,11 +240,13 @@
           collapsedHeight = $element.data('collapsedHeight');
 
       if ($element.height() <= collapsedHeight) {
-        newHeight = $element.data('expandedHeight') + 'px';
+       
+        newHeight = 'auto';
         newLink = 'lessLink';
         expanded = true;
       }
       else {
+        
         newHeight = collapsedHeight;
         newLink = 'moreLink';
       }

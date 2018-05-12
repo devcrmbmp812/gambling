@@ -340,26 +340,35 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 									<div class="ask-cards">
 
-										<div class="ask-item-bonus-card">
+										<div class="ask-item-web-card" style="height: 292px ! important;">
 
 										    <div class="front">
 
 										        <div class="cardHeader">
-										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><h5><?php echo $data['bonustype']; ?></h5></a>
+										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><h5><?php echo $data['bonusName']; ?></h5></a>
 										            <span class="fa fa-info info" style="font-size:14px;"></span>
 										        </div>
 										        <div class="cardLogo" style="overflow:hidden;">
 
-										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><img src="<?php echo $data['bonusImage'];?>" class="img-responsive" style="height:120px;" alt=""></a>
+										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><img src="<?php echo $data['bonusImage'];?>" class="img-responsive" style="height:149px;" alt=""></a>
 
 										        </div>
 
-										        <div class="mainView" style="overflow:hidden;">
+										        <div class="cardReview text-center text-black" style="overflow:hidden;">
 
-										            <div class="bonus" style="padding:5px 10px;">
-										            	<p><strong><?php echo $data['sportsName']; ?> :</strong> <?php echo C::contentMorewithoutlink($data['description'], 132) . $var = (strlen($data['description']) > 132 ? ' ...' : ''); ?></p>
-
+										            <div class="rating padding-5 font16">
+										            	<strong><?php echo $data['sportsName']; ?></strong>
 										            </div>
+
+										            <div class="code padding-5">
+
+
+
+														<p class="text-center text-black"><span style="font-size:13px;">가입코드</span><b> : <?php echo $data['joinCode']; ?></b></p>
+
+
+
+													</div>
 
 										        </div>
 
@@ -372,9 +381,12 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 										        </div> -->
 
-										        <div class="playNow custom-play-now" style="margin-top: 20px;">
+										        <div class="playNow" style="margin-top: -1px;">
 
-										            <a href="<?php echo $data['link']; ?>" target="_blank" class="btn btn-ask btn-w100"><b>GET NOW</b></a>
+										        	<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+
+													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $data['joinCode']; ?>">
+													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($data['link'], 'http') !== false ) {echo $data['link'];} else {echo 'http://'.$data['link'];}?>">
 
 										        </div>
 
@@ -441,7 +453,14 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 													</div>
 
-				                                    <a href="<?php echo $data['link']; ?>" target="_blank" class="btn btn-ask btn-w100"><b>GET NOW</b></a>
+													<div class="playNow">
+
+											        	<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+
+														<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $data['joinCode']; ?>">
+														<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($data['link'], 'http') !== false ) {echo $data['link'];} else {echo 'http://'.$data['link'];}?>">
+
+											        </div>
 
 				                                </div>
 
@@ -502,8 +521,15 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 												<p class="text-green" style="margin-bottom: 5px;"><b><?php echo $value['sportsName']; ?></b></p>
 
-												<a href="<?php echo $value['link'];?>" target="_blank" class="btn btn-default mobile-button"><b>GET NOW</b></a>
+												<div class="playNow">
 
+										        	<a href="#" class="btn btn-default mobile-button" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+
+													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
+													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">
+
+										        </div>
+												
 										  	</div>
 
 										</div>

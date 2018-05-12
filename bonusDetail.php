@@ -103,7 +103,9 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 <?php require_once('includes/doc_head.php'); ?>
 
-<style>#fixed-right{margin-top:5px;}</style>
+<style>
+	#fixed-right{margin-top:5px;}
+</style>
 
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="image-bg">
 
@@ -311,9 +313,12 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 				<div class="col-sm-12 content-button">
 
-					<div class="col-sm-4">
+					<div class="col-sm-4 playNow">
 
-						<a href="<?php echo $_SESSION['value']['0']['link']; ?>" target="_blank" class="btn btn-ask-red btn-w100 text-capitalize padding10 font15"><b><i class="fa fa-reply-all margin-right-5" aria-hidden="true"></i> 사이트 바로가기</b></a>
+						<a href="#" class="btn btn-ask-red btn-w100 text-capitalize padding10 font15" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b><i class="fa fa-reply-all margin-right-5" aria-hidden="true"></i> 사이트 바로가기</b></a>
+
+						<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $_SESSION['value']['0']['joinCode']; ?>">
+						<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($_SESSION['value']['0']['link'], 'http') !== false ) {echo $_SESSION['value']['0']['link'];} else {echo 'http://'.$_SESSION['value']['0']['link'];}?>">
 
 					</div>
 
@@ -333,17 +338,20 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 				<div class="content row fixed-top">
 
-					<div class="col-sm-8 margin-top-10">
+					<div class="col-sm-8 margin-top-10 mobile-hide-letter">
 
 						<span class="font15 respo-font text-white text-uppercase"><b><?php echo $_SESSION['value']['0']['sportsName']; ?></b></span>
 
 						<span class="font15 respo-font text-white text-uppercase"><b> &nbsp;&nbsp;/&nbsp;&nbsp; 가입코드 : <?php echo $_SESSION['value']['0']['joinCode']; ?></b></span>
 
 					</div>
+					
+					<div class="col-sm-4 playNow">
 
-					<div class="col-sm-4">
+						<a href="#" class="btn btn-ask-red btn-w100 text-capitalize padding10 font15" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b><i class="fa fa-reply-all margin-right-5" aria-hidden="true"></i> 사이트 바로가기</b></a>
 
-						<a href="<?php echo $_SESSION['value']['0']['link']; ?>" target="_blank" class="btn btn-ask-red btn-w100 text-capitalize padding10 font15"><b><i class="fa fa-reply-all margin-right-5" aria-hidden="true"></i> Play Now</b></a>
+						<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $_SESSION['value']['0']['joinCode']; ?>">
+						<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($_SESSION['value']['0']['link'], 'http') !== false ) {echo $_SESSION['value']['0']['link'];} else {echo 'http://'.$_SESSION['value']['0']['link'];}?>">
 
 					</div>
 
@@ -1051,26 +1059,36 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 									<div class="ask-cards">
 
-										<div class="ask-item-bonus-card">
+										<div class="ask-item-web-card" style="height: 292px ! important;">
 
 											<div class="front">
 
 										        <div class="cardHeader">
-										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><h5><?php echo $data['bonustype']; ?></h5></a>
+										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><h5><?php echo $data['bonusName']; ?></h5></a>
 										            <span class="fa fa-info info" style="font-size:14px;"></span>
 										        </div>
 										        <div class="cardLogo" style="overflow:hidden;">
 
-										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><img src="<?php echo $data['bonusImage'];?>" class="img-responsive" style="height:120px;" alt=""></a>
+										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><img src="<?php echo $data['bonusImage'];?>" class="img-responsive" style="height:149px;" alt=""></a>
 
 										        </div>
 
-										        <div class="mainView" style="overflow:hidden;">
+										        <div class="cardReview text-center text-black" style="overflow:hidden;">
 
-										            <div class="bonus" style="padding:5px 10px;">
-										            	<p><strong><?php echo $data['sportsName']; ?> :</strong> <?php echo C::contentMorewithoutlink($data['description'], 132) . $var = (strlen($data['description']) > 132 ? ' ...' : ''); ?></p>
-
+										            <div class="rating padding-5 font16">
+										            	<strong><?php echo $data['sportsName']; ?></strong>
 										            </div>
+
+										            <div class="code padding-5">
+
+
+
+														<p class="text-center text-black"><span style="font-size:13px;">가입코드</span><b> : <?php echo $data['joinCode']; ?></b></p>
+
+
+
+													</div>
+
 
 										        </div>
 
@@ -1083,9 +1101,13 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 										        </div> -->
 
-										        <div class="playNow custom-play-now" style="margin-top: 20px;">
+										        <div class="playNow" style="margin-top: -1px;">
 
-										            <a href="<?php echo $data['link']; ?>" target="_blank" class="btn btn-ask btn-w100"><b>GET NOW</b></a>
+										            
+										            <a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+
+													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $data['joinCode']; ?>">
+													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($data['link'], 'http') !== false ) {echo $data['link'];} else {echo 'http://'.$data['link'];}?>">
 
 										        </div>
 
@@ -1209,8 +1231,12 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 												<p class="text-green" style="margin-bottom: 5px;"><b><?php echo $value['sportsName']; ?></b></p>
 
-												<a href="<?php echo $value['link'];?>" target="_blank" class="btn btn-default mobile-button"><b>GET NOW</b></a>
+												<div class="playNow">
+												 	<a href="#" class="btn btn-default mobile-button" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
 
+													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
+													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">
+												</div>
 										  	</div>
 
 										</div>
@@ -1255,26 +1281,35 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 									<div class="ask-cards">
 
-										<div class="ask-item-bonus-card">
+										<div class="ask-item-web-card" style="height: 292px ! important;">
 
 											<div class="front">
 
 										        <div class="cardHeader">
-										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><h5><?php echo $data['bonustype']; ?></h5></a>
+										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><h5><?php echo $data['bonusName']; ?></h5></a>
 										            <span class="fa fa-info info" style="font-size:14px;"></span>
 										        </div>
 										        <div class="cardLogo" style="overflow:hidden;">
 
-										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><img src="<?php echo $data['bonusImage'];?>" class="img-responsive" style="height:120px;" alt=""></a>
+										            <a href="bonus-details/<?php echo $data['id']?>/<?php echo $data['bonusName'];?>"><img src="<?php echo $data['bonusImage'];?>" class="img-responsive" style="height:149px;" alt=""></a>
 
 										        </div>
 
-										        <div class="mainView" style="overflow:hidden;">
+										        <div class="cardReview text-center text-black" style="overflow:hidden;">
 
-										            <div class="bonus" style="padding:5px 10px;">
-										            	<p><strong><?php echo $data['sportsName']; ?> :</strong> <?php echo C::contentMorewithoutlink($data['description'], 132) . $var = (strlen($data['description']) > 132 ? ' ...' : ''); ?></p>
-
+										            <div class="rating padding-5 font16">
+										            	<strong><?php echo $data['sportsName']; ?></strong>
 										            </div>
+
+										            <div class="code padding-5">
+
+
+
+														<p class="text-center text-black"><span style="font-size:13px;">가입코드</span><b> : <?php echo $data['joinCode']; ?></b></p>
+
+
+
+													</div>
 
 										        </div>
 
@@ -1287,9 +1322,13 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 										        </div> -->
 
-										        <div class="playNow custom-play-now" style="margin-top: 20px;">
+										        <div class="playNow" style="margin-top: -1px;">
 
-										            <a href="<?php echo $data['link']; ?>" target="_blank" class="btn btn-ask btn-w100"><b>GET NOW</b></a>
+												 	<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+
+													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $data['joinCode']; ?>">
+													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($data['link'], 'http') !== false ) {echo $data['link'];} else {echo 'http://'.$data['link'];}?>">
+												
 
 										        </div>
 
@@ -1410,8 +1449,12 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 												<p class="text-white" style="margin-bottom: 5px;"><b><?php echo $value['bonusAmount']; ?></b></p>
 
 												<p class="text-green" style="margin-bottom: 5px;"><b><?php echo $value['sportsName']; ?></b></p>
+												<div class="playNow">
+													<a href="#" class="btn btn-default mobile-button" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
 
-												<a href="<?php echo $value['link'];?>" target="_blank" class="btn btn-default mobile-button"><b>GET NOW</b></a>
+													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
+													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">
+												</div>
 
 										  	</div>
 

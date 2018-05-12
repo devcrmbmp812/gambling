@@ -19,8 +19,11 @@ define('SESSION_START_TIME', Date('Y-m-d H:i:s'));
 //define('ROOT', 'E:/xampp/htdocs/_gambling/your-project/');
 define('SEO', false);
 // Web
-define('HOST', 'https://www.thebettingtime.com/');
-define('ROOT', '/home/thebettingtime/public_html/');
+// define('HOST', 'https://www.thebettingtime.com/');
+// define('ROOT', '/home/thebettingtime/public_html/');
+
+define('HOST', 'http://dev.betting.com/');
+define('ROOT', 'E:/Client/Gambling/');
 
 # Security & Encryption
 define('SECURITY_SALT', '000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f');
@@ -28,8 +31,12 @@ define('SECURITY_SALT', '000102030405060708090a0b0c0d0e0f101112131415161718191a1
 # DataBase Settings(local)
 define('DB_MODE', 'MYSQLI');
 define('DB_HOST', 'localhost');
-define('DB_USER', 'thebetti_new');
-define('DB_PASS', 'FSNp1%Fx^m75');
+// define('DB_USER', 'thebetti_new');
+// define('DB_PASS', 'FSNp1%Fx^m75');
+// define('DB_NAME', 'thebetti_new');
+
+define('DB_USER', 'root');
+define('DB_PASS', '');
 define('DB_NAME', 'thebetti_new');
 //define('DB_NAME', 'newWareHouse');
 //define('DB_NAME', 'dbManageBusiness_migration_test');//testing  packinglist

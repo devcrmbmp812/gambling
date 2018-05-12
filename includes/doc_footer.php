@@ -163,7 +163,30 @@
 
 </div>
 
-		
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">배팅타임 가입코드 안내</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 10px;opacity: 1;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+
+         <h5>가입코드를 다시 한번 확인해주세요.</h5><h3>가입코드 : <span id="modaljoincode">2222</span></h3><br> <h5>"바로가기" 버튼을 누르면 사이트로 이동합니다</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancelconfirm" class="btn btn-secondary" data-dismiss="modal">취소</button>
+        <button type="button" class="btn btn-primary" id="modalconfirm">바로가기</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 	    <!-- Modal -->
 
@@ -528,6 +551,7 @@ s0.parentNode.insertBefore(s1,s0);
 	//     imgText.innerHTML = imgs.alt;
 	//     expandImg.parentElement.style.display = "block";
 	// }
+
 </script>
 
 <?php 

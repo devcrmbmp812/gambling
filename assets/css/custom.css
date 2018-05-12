@@ -242,6 +242,10 @@ body.modal-open {
 	font-size: 14px !important;
 	font-weight: 900 !important;
 	margin-top: 3px !important;
+	
+}
+.fixed-top .playNow a{
+	margin-left: 0px !important;	
 }
 /* button end*/
 
@@ -1897,7 +1901,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fac695', end
 	top:0;
 	z-index:1000;
 	/*width:54%;*/
-	margin-left: -15px;
+	margin-left: -14px;
 	margin-top: 0px;
 	display: none;
 	box-shadow: 0px 5px 10px #ccc;
@@ -2932,9 +2936,16 @@ input[name="range1"]::-webkit-slider-thumb:after{
 
 .news-about figure, .news-about figure img, .content.newsDescSec p, .content.newsDescSec p img{
 	width:100% !important;
+	height:auto !important;
 }
 .content.newsDescSec img{
 
+}
+
+@media screen and (max-width: 480px) {
+  .mobile-hide-letter {
+    display: none!important;
+  }
 }
 
 

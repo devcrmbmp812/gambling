@@ -2,6 +2,8 @@
 
 RewriteEngine on
 
+RewriteCond %{HTTP_HOST} ^thebettingtime.com$
+RewriteRule ^/?$ "https\:\/\/www\.thebettingtime\.com\/" [R=301,L]
 
 
 
@@ -30,17 +32,17 @@ RewriteRule ^submit-complaint/ submitComplaint.php [L]
 
 
 
-RewriteRule ^online-sports/ sports.php?cat=OS [L]
+RewriteRule ^online-sports sports.php?cat=OS [L]
 
-RewriteRule ^newest-sports/ sports.php?cat=NS [L]
+RewriteRule ^newest-sports sports.php?cat=NS [L]
 
-RewriteRule ^verified-sports/ sports.php?cat=VS [L]
+RewriteRule ^verified-sports sports.php?cat=VS [L]
 
-RewriteRule ^bitcoin-sports/ sports.php?cat=BS [L]
+RewriteRule ^bitcoin-sports sports.php?cat=BS [L]
 
-RewriteRule ^mobile-sports/ sports.php?cat=MS [L]
+RewriteRule ^mobile-sports sports.php?cat=MS [L]
 
-RewriteRule ^livebetting-sports/ sports.php?cat=LS [L]
+RewriteRule ^livebetting-sports sports.php?cat=LS [L]
 
 
 
@@ -52,21 +54,21 @@ RewriteRule ^livebetting-sports/ sports.php?cat=LS [L]
 
 
 
-RewriteRule ^welcome-bonus/ bonus.php?cat=WB [L]
+RewriteRule ^welcome-bonus bonus.php?cat=WB [L]
 
-RewriteRule ^first-deposit-bonus/ bonus.php?cat=FSD [L]
+RewriteRule ^first-deposit-bonus bonus.php?cat=FSD [L]
 
-RewriteRule ^every-time-bonus/ bonus.php?cat=ETB [L]
+RewriteRule ^every-time-bonus bonus.php?cat=ETB [L]
 
-RewriteRule ^rolling-bonus/ bonus.php?cat=RB [L]
+RewriteRule ^rolling-bonus bonus.php?cat=RB [L]
 
-RewriteRule ^free-money/ bonus.php?cat=FM [L]
+RewriteRule ^free-money bonus.php?cat=FM [L]
 
-RewriteRule ^combo-bonus/ bonus.php?cat=CB [L]
+RewriteRule ^combo-bonus bonus.php?cat=CB [L]
 
-RewriteRule ^rebate-bonus/ bonus.php?cat=REB [L]
+RewriteRule ^rebate-bonus bonus.php?cat=REB [L]
 
-RewriteRule ^other-bonus/ bonus.php?cat=OB [L]
+RewriteRule ^other-bonus bonus.php?cat=OB [L]
 
 
 
@@ -76,17 +78,17 @@ RewriteRule ^other-bonus/ bonus.php?cat=OB [L]
 
 
 
-RewriteRule ^complaint-open/ complaint.php?catComp=OP [L]
+RewriteRule ^complaint-open complaint.php?catComp=OP [L]
 
-RewriteRule ^complaint-resolve/ complaint.php?catComp=RE [L]
+RewriteRule ^complaint-resolve complaint.php?catComp=RE [L]
 
-RewriteRule ^complaint-unsolved/ complaint.php?catComp=UN [L]
+RewriteRule ^complaint-unsolved complaint.php?catComp=UN [L]
 
-RewriteRule ^complaint-payment-issues/ complaint.php?catComp=PI [L]
+RewriteRule ^complaint-payment-issues complaint.php?catComp=PI [L]
 
-RewriteRule ^complaint-bonus-issues/ complaint.php?catComp=BI [L]
+RewriteRule ^complaint-bonus-issues complaint.php?catComp=BI [L]
 
-RewriteRule ^complaint-other-issues/ complaint.php?catComp=OI [L]
+RewriteRule ^complaint-other-issues complaint.php?catComp=OI [L]
 
 
 
@@ -94,9 +96,9 @@ RewriteRule ^complaint-other-issues/ complaint.php?catComp=OI [L]
 
 
 
-RewriteRule ^site-news/ news.php?cat=SN [L]
+RewriteRule ^site-news news.php?cat=SN [L]
 
-RewriteRule ^blog/ news.php?cat=B [L]
+RewriteRule ^blog news.php?cat=B [L]
 
 
 
@@ -145,3 +147,10 @@ RewriteRule ^complaint-details/([0-9]+)/ complaintsDetail.php?detail=$1 [L]
 #bonusDetail.php?detail=Ask-gambler%2B6
 
 #http://localhost/_gambling/your-project/complaintsDetail.php?detail=3
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php72” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddType application/x-httpd-php .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

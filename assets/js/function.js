@@ -1,4 +1,15 @@
 $(document).ready(function(){
+		var weblink = '';
+		$('.playNow').click(function(){
+			var joincode = $(this).children("input.hiddenpopup").val();
+			weblink = $(this).children("input.hiddenpopupweblink").val();
+			$('#exampleModal span#modaljoincode').html(joincode);
+			$('#modalconfirm').click(function(){
+				window.open(weblink);
+				$('#cancelconfirm').click();
+			});
+			
+		});
 		$('.info').click(function(){
 			//$('.ask-item-bonus-card').toggleClass('flipped');
 			$(this).parents('.ask-item-bonus-card').toggleClass('flipped');

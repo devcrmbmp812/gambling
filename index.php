@@ -583,7 +583,7 @@ $page = 'home';
 													else
 													{
 														?>
-														<span class="card-tag-blue">비공개</span>
+														<span class="card-tag-private">비공개</span>
 														<?php
 
 													}
@@ -688,11 +688,10 @@ $page = 'home';
 
 												<div class="playNow">
 
+													<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>PLAY NOW</b></a>
 
-
-													<a href="http://<?php echo $value['link'];?>" class="btn btn-ask btn-w100"><b>PLAY NOW</b></a>
-
-
+													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
+													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">
 
 												</div>
 
@@ -1084,11 +1083,12 @@ $page = 'home';
 
 											<p class="text-white mobile-join-code">가입코드<span> : <?php echo $value['joinCode']; ?></span></p>
 
+											<div class="playNow">
+												<a href="#" data-toggle = "modal" data-target="#exampleModal" id = "modalShow" class="btn btn-default mobile-button"><b>PLAY NOW</b></a>
 
-
-											<a href="<?php echo $value['link'];?>" target="_blank" class="btn btn-default mobile-button"><b>PLAY NOW</b></a>
-
-
+												<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
+												<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">
+											</div>
 
 									  	</div>
 
@@ -1162,7 +1162,7 @@ $page = 'home';
 
 
 
-								$result = $User->query("SELECT `id`, `bonusName`, `joinCode`, `bonusAmount`, `link`, `bonusCode`, `bonustype`, `wageringRequirements`, `sportsName`, `rating`, `bonusImage`, `imageName`, `description` FROM `tblBonusCards` ORDER BY `updatedOn` desc LIMIT 4");
+								$result = $User->query("SELECT `id`, `isPopular`, `bonusName`, `joinCode`, `bonusAmount`, `link`, `bonusCode`, `bonustype`, `wageringRequirements`, `sportsName`, `rating`, `bonusImage`, `imageName`, `description` FROM `tblBonusCards` ORDER BY `updatedOn` desc LIMIT 4");
 
 
 
@@ -1186,214 +1186,36 @@ $page = 'home';
 
 
 
-										<div class="ask-item-bonus-card">
+										<div class="ask-item-web-card">
 
 
-
-											<div class="front">
-
-
-
+			                                <div class="front">
 												<div class="cardHeader">
+													<a href="bonus-details/<?php echo $value['id']?>/<?php echo $value['bonusName']?>"><h5><?php echo $value['bonusName']; ?></h5></a>
+													<span class="pull-right fa fa-info info"></span>
+												</div>
+												<div class="cardLogo">
+													
+													<a href="bonus-details/<?php echo $value['id']?>/<?php echo $value['bonusName']?>"><img src="<?php echo $value['bonusImage'];?>" width="196px" height="132px" alt=""></a>
 
+												</div>
+												<div class="cardReview text-center text-black">
 
+													<div class="rating padding-5 font16">
 
-				                                    <a href="bonus-details/<?php echo $value['id']?>/<?php echo $value['bonusName']?>"><h5><?php echo $value['bonustype']; ?></h5></a>
+														<strong><?php echo $value['sportsName']; ?></strong>
+												    </div>
 
 
+													<div class="code padding-5">
 
-													<span class="fa fa-info info" style="font-size:14px;"></span>
 
 
+														<p class="text-center text-black"><span style="font-size:13px;">가입코드</span><b> : <?php echo $value['joinCode']; ?></b></p>
 
-				                                </div>
 
 
-
-				                                <div class="cardLogo" style="overflow:hidden;">
-
-
-
-				                                    <a href="bonus-details/<?php echo $value['id']?>/<?php echo $value['bonusName']?>"><img src="<?php echo $value['bonusImage'];?>" class="img-responsive" style="height:120px;"  alt=""></a>
-
-
-
-				                                    <!--<div class="cardReview text-center text-black <?php if(mb_strlen($value['bonusName'], 'UTF-8') > 10){ echo "margin-bottom-3";}?>">
-
-
-
-				                                    	<span class="bonus-name text-center text-uppercase <?php if(mb_strlen($value['sportsName'], 'UTF-8') > 10){ echo "font11";}?>"><?php echo $value['sportsName'];?></span>
-
-
-
-					                                    <div class="rating padding3 font13 color" style="margin-top: -1px; margin-left: 2px;">
-
-
-
-					                                    	<?php 
-
-
-
-				                                    		if ($value['rating'] == 1) {
-
-
-
-			                                    			?>
-
-
-
-			                                    			<i class="fa fa-star first" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></i><i class="fa fa-star-o" aria-hidden="true"></i></i><i class="fa fa-star-o" aria-hidden="true"></i></i><i class="fa fa-star-o" aria-hidden="true"></i></i>
-
-
-
-			                                    			<?php
-
-
-
-					                                    		} else if($value['rating'] == 2){
-
-
-
-			                                    			?>
-
-
-
-			                                    			<i class="fa fa-star second" aria-hidden="true"></i><i class="fa fa-star second" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></i><i class="fa fa-star-o" aria-hidden="true"></i></i><i class="fa fa-star-o" aria-hidden="true"></i></i>
-
-
-
-			                                    			<?php
-
-
-
-					                                    		} else if($value['rating'] == 3){
-
-
-
-			                                    			?>
-
-
-
-			                                    			<i class="fa fa-star third" aria-hidden="true"></i><i class="fa fa-star third" aria-hidden="true"></i><i class="fa fa-star third" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></i><i class="fa fa-star-o" aria-hidden="true"></i></i>
-
-
-
-			                                    			<?php
-
-
-
-					                                    		} else if($value['rating'] == 4){
-
-
-
-			                                    			?>
-
-
-
-			                                    			<i class="fa fa-star four" aria-hidden="true"></i><i class="fa fa-star four" aria-hidden="true"></i><i class="fa fa-star four" aria-hidden="true"></i><i class="fa fa-star four" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></i>
-
-
-
-			                                    			<?php
-
-
-
-					                                    		} else if($value['rating'] == 5){
-
-
-
-			                                    			?>
-
-
-
-															<i class="fa fa-star five" aria-hidden="true"></i><i class="fa fa-star five" aria-hidden="true"></i><i class="fa fa-star five" aria-hidden="true"></i><i class="fa fa-star five" aria-hidden="true"></i><i class="fa fa-star five" aria-hidden="true"></i>
-
-
-
-			                                    			<?php
-
-
-
-					                                    		}
-
-
-
-					                                    	?> 
-
-
-
-					                                    </div>
-
-
-
-					                                    <div class="ask-code">
-
-
-
-				                                        	<p class="custom-border1">가입코드</p> <br>
-
-
-
-				                                        	<span class="custom-border"  <?php if(mb_strlen($value['joinCode'], 'UTF-8') > 9){ echo 'style="font-size:12px;padding-left:3px;padding-right:3px;"';}?>><?php echo $value['joinCode'];?></span>
-
-
-
-					                                    </div>
-
-
-
-					                                </div>-->
-
-
-
-				                                </div>
-
-
-
-				                                <div class="mainView" style="overflow:hidden;">
-
-
-
-			                                        <div class="bonus" style="padding:5px 10px;">
-
-														<p><strong><?php echo $value['sportsName']; ?> :</strong> <?php echo C::contentMorewithoutlink($value['description'], 72) . $var = (strlen($value['description']) > 72 ? ' ...' : ''); ?></p>
-
-			                                            <!--<div class="bonusAmount">
-			                                                <span class="text-center"><?php echo $value['bonusAmount']; ?></span>
-			                                            </div>
-			                                            <div class="bonusType">
-			                                                <span class="text-center text-uppercase <?php if(mb_strlen($value['bonusName'], 'UTF-8') > '7'){ echo "font12";}?>"><?php echo $value['bonusName']; ?></span>
-			                                            </div>-->
-
-			                                        </div>
-
-
-
-			                                    </div>
-
-
-
-			                                    <!--<div class="bonusCode text-center">
-
-
-
-			                                        <span style="font-size:12px">보너스 코드</span><br>
-
-
-
-			                                        <span><b><?php echo $value['bonusCode']; ?></b></span>
-
-
-
-			                                    </div>-->
-
-
-
-				                                <div class="playNow" style="margin-top: 4px;">
-
-
-
-													<a href="<?php echo $value['link'];?>" target="_blank" class="btn btn-ask btn-w100"><b>GET NOW</b></a>
+													</div>
 
 
 
@@ -1401,8 +1223,16 @@ $page = 'home';
 
 
 
-											</div><!-- front -->
+												<div class="playNow">
 
+													<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+
+													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
+													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">
+
+												</div>
+
+											</div>
 
 
 											<div class="back">
@@ -1645,9 +1475,15 @@ $page = 'home';
 
 
 
-												<a href="http://<?php echo $value['link'];?>" class="btn btn-default mobile-button"><b>GET NOW</b></a>
+												<div class="playNow">
 
 
+				                                	<a href="#" class="btn btn-default mobile-button" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+
+													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
+													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">
+
+												</div>
 
 										  	</div>
 
