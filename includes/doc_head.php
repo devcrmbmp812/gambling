@@ -321,7 +321,8 @@ if($page == ''){
 								<!-- <li class=""><a href="index.php" class="text-uppercase" style="color:#fff;">HOME <span class="sr-only">(current)</span></a></li> --><!-- nav-active -->
 								<!--<li><a href="javascript:void(0)"> &nbsp; </a></li>-->
 								<li class="dropdown child-drop">
-								  <a href="sports/" class="dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">스포츠</a>
+								  <a href="javascript:void(0)" onclick="redirect_sport();" class="dropdown-toggle text-white disabled" id="mobile_more_sport" role="button" aria-haspopup="true" aria-expanded="false"><span class="sport_span">스포츠</span></a>
+								  <button class="more_span" style="width:72px;">펼쳐보기</button>
 									<ul class="dropdown-menu">
 										<li><a href="online-sports/">일반 배팅사이트</a></li>
 										<li><a href="newest-sports/">신규 배팅사이트</a></li>
@@ -334,7 +335,9 @@ if($page == ''){
 								</li>
 <!-- 								<li class=""><a href="mini-game/" class="text-uppercase" style="color:#fff;">미니게임</a></li> -->
 								<li class="dropdown child-drop">
-								  <a href="bonus/" class="dropdown-toggle text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">보너스</a>
+								  <a href="javascript:void(0)" onclick="redirect_bonus();" class="dropdown-toggle text-white disabled" id="mobile_more_bonus" role="button" aria-haspopup="true" aria-expanded="false"><span class="bonus_span" onclick="window.location.href = 'bonus/';">보너스</span></a>
+								  <button class="more_span" style="width:72px;">펼쳐보기</button>
+								  
 									<ul class="dropdown-menu">
 										<li><a href="welcome-bonus/">신규가입 보너스</a></li>
 										<li><a href="first-deposit-bonus/">첫충전 보너스</a></li>

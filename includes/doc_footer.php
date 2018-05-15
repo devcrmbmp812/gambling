@@ -207,6 +207,30 @@
 <script src="assets/js/jquery.cookie.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
 <script type="text/javascript">
+	
+	function redirect_sport(){
+		window.location.href = "/sports/";	
+	}
+	function redirect_bonus(){
+		window.location.href = "/bonus/";
+	}
+
+	$('#bs-example-navbar-collapse-3 li button.more_span').click(function(){
+		//alert("here");
+		var temp = $(this).parent('li.dropdown');
+		if(temp.hasClass('open')){
+			temp.removeClass('open');
+			$(this).html('펼쳐보기');
+		}
+		else
+		{
+			temp.addClass('open');
+			$(this).html('닫기');
+			$(this).width('56px');
+
+		}
+	});
+	
 	// $.loadChat = function(cu){
 	// 	if(cu){
 	// 		$.getJSON('chat_hndlr.php?a=READ&u=' + cu, function(d){

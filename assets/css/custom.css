@@ -2948,5 +2948,13 @@ input[name="range1"]::-webkit-slider-thumb:after{
   }
 }
 
+.more_span{
+	position: absolute;
+    right: 60px;
+    margin-top: -33px;
+    color: white;
+    background-color: #245894;
+}
+
 
 /*external css for editor content*/
