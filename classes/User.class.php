@@ -1,6 +1,8 @@
 <?php
 class User extends Base {
 
+    private $userTbl = 'tblUser';
+
 	public static $RECORD_COUNT = 0;
 
 	const SITE_ADMIN = '2';
@@ -172,7 +174,7 @@ class User extends Base {
             unset($_SESSION['admin']);
             unset($_SESSION['popup']);
             unset($_SESSION['user']);
-						unset($_SESSION['campain']);
+			unset($_SESSION['campain']);
             if(isset($_COOKIE['__login_cookie']) && trim($_COOKIE['__login_cookie']) != ''){
                 setcookie("__login_cookie", "", time() - 3600);
             }
@@ -938,6 +940,55 @@ class User extends Base {
     
     public function __destruct(){
         parent::__destruct();
+    }
+
+    public function existUser($email){
+        if (isset($email)) {
+            $userQuery = "SELECT * FROM ".$this->userTbl." WHERE email = '".$email."'";
+            $userResult = $this->query($userQuery);
+            if (!empty($userResult) && $userResult != 1) {//if exist
+                return 1;
+            } else {//if new user
+                return 0;
+            }
+        }
+    }
+
+    public function checkUser($userData = array(),$inup){
+
+        if(!empty($userData)){
+
+            if ($inup == 'signin') {
+                $userinfoQuery = "SELECT * FROM ".$this->userTbl." WHERE email = '".$userData['email']."'";
+                $userinfoResult = $this->query($userinfoQuery); 
+                if(is_array($userinfoResult) && count($userinfoResult) > 0){
+                    $this->setUserLogin($userinfoResult[0]['id'], $userinfoResult[0]['userId']);
+                    Message::addMessage("로그인이 성공적으로 됐습니다. 즐거운 배팅타임되세요!", SUCCS);
+                    return 1;
+                }   
+                else{ return 0;}
+            } else if($inup == 'signup') {
+                
+                $query = "INSERT INTO ".$this->userTbl." SET nickName = '".$userData['nickName']."', userId = '".$userData['userId']."', oauth_provider = '".$userData['oauth_provider']."', oauth_uid = '".$userData['oauth_uid']."', email = '".$userData['email']."'";
+                $insert = $this->query($query);
+                if ($insert) {
+                    //Get user data from the database
+                    $userinfoQuery = "SELECT * FROM ".$this->userTbl." WHERE email = '".$userData['email']."'";
+                    $result = $this->query($userinfoQuery); 
+                    if(is_array($result) && count($result) > 0){
+                        $this->setUserLogin($result[0]['id'], $result[0]['userId']);
+                    }
+                    Message::addMessage("Success Sign up And Now You are logged in", SUCCS);    
+                    return 1;
+                }
+                else
+                {
+                    Message::addMessage("Database Insert Err",ERR);
+                    return 0;
+                }
+                
+            }
+        }
     }
 }
 

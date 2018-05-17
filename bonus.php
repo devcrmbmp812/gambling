@@ -22,13 +22,13 @@ $Common = new Common();
 
 
 
-if(isset($_GET['logout']) && trim($_GET['logout']) == 'logout'){
+// if(isset($_GET['logout']) && trim($_GET['logout']) == 'logout'){
 
-    UNSET($_SESSION['admin']);
+//     UNSET($_SESSION['admin']);
 
-    header("LOCATION:index.php");
+//     header("LOCATION:index.php");
 
-}
+// }
 
 
 
@@ -383,7 +383,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 										        <div class="playNow" style="margin-top: -1px;">
 
-										        	<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+										        	<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>사이트 바로가기</b></a>
 
 													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $data['joinCode']; ?>">
 													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($data['link'], 'http') !== false ) {echo $data['link'];} else {echo 'http://'.$data['link'];}?>">
@@ -455,7 +455,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 													<div class="playNow">
 
-											        	<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+											        	<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>사이트 바로가기</b></a>
 
 														<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $data['joinCode']; ?>">
 														<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($data['link'], 'http') !== false ) {echo $data['link'];} else {echo 'http://'.$data['link'];}?>">
@@ -523,7 +523,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 												<div class="playNow">
 
-										        	<a href="#" class="btn btn-default mobile-button" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+										        	<a href="#" class="btn btn-default mobile-button" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>사이트 바로가기</b></a>
 
 													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
 													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">

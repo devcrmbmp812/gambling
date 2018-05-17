@@ -10,7 +10,64 @@ $User = new User();
 $Card = new Card();
 
 
+/*
+*G+ log in start
+*/
 
+if(isset($_GET['code'])){
+    $gClient->authenticate($_GET['code']);
+    $_SESSION['token'] = $gClient->getAccessToken();
+}
+
+if (isset($_SESSION['token'])) {
+    $gClient->setAccessToken($_SESSION['token']);
+}
+
+$authUrl = $gClient->createAuthUrl();
+$output = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'" class="btn btn-google w-100"><i class="fa fa-google-plus-square fa-2x pull-left" aria-hidden="true"></i>구글로 가입 신청하기</a>';
+
+if ($gClient->getAccessToken()) {
+	
+	//Get user profile data from google
+	$gpUserProfile = $google_oauthV2->userinfo->get();
+
+	$email = $gpUserProfile['email'];
+	$split_email = explode("@",$email);
+	    	    
+    $gpUserData = array(
+        'oauth_provider'=> 'google',
+        'oauth_uid'     => $gpUserProfile['id'],
+        'email'         => $gpUserProfile['email'],
+        'userId'		=> $split_email[0],
+        'nickName'		=> $_POST['nickName']
+    );
+	$usercheck = $User->existUser($gpUserProfile['email']);
+
+	if(isset($_GET['code']) && $usercheck ){
+		$userData = $User->checkUser($gpUserData,'signin');	
+		if($userData){
+			C::redirect(HOST);	
+		}
+	}
+	else if($_POST['nickName'] && !$usercheck)
+	{
+		$userData = $User->checkUser($gpUserData,'signup');	
+    	if ($userData) {
+    		C::redirect(HOST);		
+    	}
+	}
+}
+/*
+G+ log in end
+*/
+if(isset($_GET['logout']) && trim($_GET['logout']) == 'logout'){
+	$gClient->revokeToken();
+	unset($_SESSION['token']);
+	unset($_SESSION['userData']);
+  	$User->logout();
+
+   	C::redirect('home/');
+}
 
 if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['__FORM']) && $_POST['__FORM'] == '_LOGIN_'){
 	if($User->login($_POST)){

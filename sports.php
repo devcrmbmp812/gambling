@@ -507,7 +507,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 													<div class="playNow" style="margin-top: -1px;"><!-- custom-play-now -->
 
-														<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>PLAY NOW</b></a>
+														<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>사이트 바로가기</b></a>
 
 														<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
 														<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">
@@ -598,7 +598,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 													<div class="getNow">
 
-														<a href="<?php echo $value['link'];?>" class="btn btn-ask btn-w100"><b>PLAY NOW</b></a>
+														<a href="<?php echo $value['link'];?>" class="btn btn-ask btn-w100"><b>사이트 바로가기</b></a>
 
 													</div>
 
@@ -718,7 +718,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 											<div class="playNow"><!-- custom-play-now -->
 
-												<a href="#" class="btn btn-default mobile-button" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>PLAY NOW</b></a>
+												<a href="#" class="btn btn-default mobile-button" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>사이트 바로가기</b></a>
 
 												<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
 												<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">

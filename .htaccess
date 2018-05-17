@@ -12,6 +12,8 @@ RewriteRule ^/?$ "https\:\/\/www\.thebettingtime\.com\/" [R=301,L]
 
 RewriteRule ^home/ index.php [L]
 
+RewriteRule ^googlesignup/ googlesignup.php [L]
+
 RewriteRule ^bonus/ bonus.php [L]
 
 RewriteRule ^sports/ sports.php [L]

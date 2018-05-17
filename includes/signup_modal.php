@@ -1,21 +1,4 @@
-<?php
-require_once ('config.php');
-$User = new User();
-$Common = new Common();
 
-if(isset($_GET['logout']) && trim($_GET['logout']) == 'logout'){
-    UNSET($_SESSION['admin']);
-    header("LOCATION:index.php");
-}
-
-// if($User->checkLoginStatus()){
-// 	$Common->redirect('index.php');
-// }
-
-
-
-
-?>
 <!-- modal signup myModalTwo-->
 	    <div class="modal fade" id="myModalTwo" tabindex="-1" role="dialog" aria-hidden="true">
 	        <div class="modal-dialog modal-sm"><!--  ask-modal-dialog -->
@@ -52,12 +35,12 @@ if(isset($_GET['logout']) && trim($_GET['logout']) == 'logout'){
 		                      		</div>
 	                      		</div>
 	                      		<p class="text-center" style="margin-top:10px;color:#ccc;">----------  OR  ----------</p>
-								<div class="clearfix">
+								<!-- <div class="clearfix">
 									<a href="" class="btn btn-facebook w-100"><i class="fa fa-facebook-square fa-2x pull-left" aria-hidden="true"></i>페이스북으로 가입 신청하기</a>
-								</div>
+								</div> -->
 								<br>
 								<div class="clearfix">
-									<a href="" class="btn btn-google w-100"><i class="fa fa-google-plus-square fa-2x pull-left" aria-hidden="true"></i>구글로 가입 신청하기</a>
+									<?php echo $output; ?>
 								</div>
 		                    </form>
 		                </div>

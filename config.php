@@ -7,6 +7,27 @@ ini_set('display_errors',TRUE);
 date_default_timezone_set("Europe/London");
 ob_start();
 session_start();
+/*g+ log in start*/
+//Include Google client library 
+include_once 'src/Google_Client.php';
+include_once 'src/contrib/Google_Oauth2Service.php';
+
+/*
+ * Configuration and setup Google API
+ */
+$clientId = '848320628824-oh3tueju5dagsgcsb0gnnumb4s7keooa.apps.googleusercontent.com';
+$clientSecret = '3vzqS2xiwKNclcj-d28pe1oZ';
+$redirectUrl = 'http://dev.betting.com/googlesignup/';
+
+//Call Google API
+$gClient = new Google_Client();
+//$gClient->setApplicationName('Login to CodexWorld.com');
+$gClient->setClientId($clientId);
+$gClient->setClientSecret($clientSecret);
+$gClient->setRedirectUri($redirectUrl);
+
+$google_oauthV2 = new Google_Oauth2Service($gClient);
+/*g+ log in end*/
 define('SESSION_ID', session_id());
 define('TODAY', date('Ymd'));
 define('SESSION_START_TIME', Date('Y-m-d H:i:s'));

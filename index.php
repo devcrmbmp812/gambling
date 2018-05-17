@@ -4,26 +4,13 @@ require_once('config.php');
 
 // Load Classes
 
-
-
 C::loadClass('User');
 C::loadClass('Card');
 C::loadClass('CMS');
 
-
-
 //Init User class
 $User = new User();
 $Card = new Card();
-
-
-
-if(isset($_GET['logout']) && trim($_GET['logout']) == 'logout'){
-    UNSET($_SESSION['admin']);
-   	C::redirect('home/');
-}
-
-
 
 if(isset($_GET['k']) && trim($_GET['k']) != ''){
 
@@ -34,8 +21,6 @@ if(isset($_GET['k']) && trim($_GET['k']) != ''){
 	}
 
 }
-
-
 
 $page = 'home';
 
@@ -688,7 +673,7 @@ $page = 'home';
 
 												<div class="playNow">
 
-													<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>PLAY NOW</b></a>
+													<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>사이트 바로가기</b></a>
 
 													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
 													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">
@@ -869,7 +854,7 @@ $page = 'home';
 
 
 
-													<a href="<?php echo $value['link'];?>" target="_blank" class="btn btn-ask btn-w100"><b>PLAY NOW</b></a>
+													<a href="<?php echo $value['link'];?>" target="_blank" class="btn btn-ask btn-w100"><b>사이트 바로가기</b></a>
 
 
 
@@ -1084,7 +1069,7 @@ $page = 'home';
 											<p class="text-white mobile-join-code">가입코드<span> : <?php echo $value['joinCode']; ?></span></p>
 
 											<div class="playNow">
-												<a href="#" data-toggle = "modal" data-target="#exampleModal" id = "modalShow" class="btn btn-default mobile-button"><b>PLAY NOW</b></a>
+												<a href="#" data-toggle = "modal" data-target="#exampleModal" id = "modalShow" class="btn btn-default mobile-button"><b>사이트 바로가기</b></a>
 
 												<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
 												<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">
@@ -1225,7 +1210,7 @@ $page = 'home';
 
 												<div class="playNow">
 
-													<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+													<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>사이트 바로가기</b></a>
 
 													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
 													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">
@@ -1355,7 +1340,7 @@ $page = 'home';
 
 
 
-				                                    <a href="http://<?php echo $value['link'];?>" class="btn btn-ask btn-w100"><b>GET NOW</b></a>
+				                                    <a href="http://<?php echo $value['link'];?>" class="btn btn-ask btn-w100"><b>사이트 바로가기</b></a>
 
 
 
@@ -1478,7 +1463,7 @@ $page = 'home';
 												<div class="playNow">
 
 
-				                                	<a href="#" class="btn btn-default mobile-button" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>GET NOW</b></a>
+				                                	<a href="#" class="btn btn-default mobile-button" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>사이트 바로가기</b></a>
 
 													<input type="hidden" class="hiddenpopup" name="popupjoincode" value="<?php echo $value['joinCode']; ?>">
 													<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="<?php if(strpos($value['link'], 'http') !== false ) {echo $value['link'];} else {echo 'http://'.$value['link'];}?>">

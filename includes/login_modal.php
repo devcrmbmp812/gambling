@@ -1,13 +1,4 @@
-<?php
-require_once ('config.php');
-$User = new User();
-$Common = new Common();
 
-
-
-
-
-?>
 <!-- modal login -->
 
 		<div class="modal fade in" id="myModal" role="dialog">
@@ -37,12 +28,12 @@ $Common = new Common();
 			                      	</div>
 		                      	</div>
 		                      	<p class="text-center" style="margin-top:10px;color:#ccc;">----------  OR  ----------</p>
-								<div class="clearfix">
+								<!-- <div class="clearfix">
 									<a href="" class="btn btn-facebook w-100"><i class="fa fa-facebook-square fa-2x pull-left" aria-hidden="true"></i>페이스북으로 로그인</a>
 								</div>
-								<br>
+								<br> -->
 								<div class="clearfix">
-									<a href="" class="btn btn-google w-100"><i class="fa fa-google-plus-square fa-2x pull-left" aria-hidden="true"></i>구글로 로그인</a>
+									<?php echo $output; ?>
 								</div>
 		                    </form>
 		                </div>
