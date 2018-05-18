@@ -560,17 +560,17 @@ $page = 'home';
 													?>
 													<span class="card-tag-red">HOT</span>
 													<?php
-													} elseif($value['isHot'] == "N"){
+													} else if($value['isHot'] == "N"){
 													?>
 													<span class="card-tag-blue">NEW</span>
 													<?php
-													}
-													else
-													{
-														?>
+													} else if($value['isHot'] == "0"){
+													?>
+													<?php
+													} else {
+													?>
 														<span class="card-tag-private">비공개</span>
-														<?php
-
+													<?php
 													}
 													?>
 													<a href="sports-details/<?php echo $value['id'];?>/<?php echo str_replace(' ', '-', $value['sportsName']);?>/"><img src="<?php echo $value['sportsImage']; ?>" width="196px" height="132px" alt=""></a>
@@ -2228,11 +2228,15 @@ $page = 'home';
 
 													<div class="news-short-desc">
 
-														<p class="text-black"><?php echo substr($value['title'], 0, 81); 
+														<p class="text-black"><?php 
+															mb_internal_encoding("UTF-8");
+															$string = $value['title'];
+															$mystring = mb_substr($string,0,81);
+															$textlen=mb_strlen($string);
+															if($textlen > 81){echo $mystring.'...';}
+															else{echo $mystring;}
 
-															if($value['title'] > 80){ 		echo '...';
-
-															} ?></p>
+															?></p>
 
 													</div>
 
@@ -2290,7 +2294,15 @@ $page = 'home';
 
 
 
-													<a href="news-details/<?php echo $value['id']; ?>/<?php echo str_replace(' ', '-', $value['title']); ?>/"><p class="text-black"><b><?php echo substr($value['title'], 0, 62);?></b></p></a>
+													<a href="news-details/<?php echo $value['id']; ?>/<?php echo str_replace(' ', '-', $value['title']); ?>/"><p class="text-black"><b><?php
+															mb_internal_encoding("UTF-8");
+															$string = $value['title'];
+															$mystring = mb_substr($string,0,62);
+															$textlen=mb_strlen($string);
+															if($textlen > 62){echo $mystring.'...';}
+															else{echo $mystring;}
+
+															?></b></p></a>
 
 
 
@@ -2622,7 +2634,14 @@ $page = 'home';
 
 
 
-														<p class="text-black"><?php echo substr($value['title'], 0, 81); if(mb_strlen($value['title'], 'UTF-8') > 81){ echo '...';}?></p>
+														<p class="text-black"><?php 
+															mb_internal_encoding("UTF-8");
+															$string = $value['title'];
+															$mystring = mb_substr($string,0,33);
+															$textlen=mb_strlen($string);
+															if($textlen > 33){echo $mystring.'...';}
+															else{echo $mystring;}
+															?></p>
 
 
 
@@ -2682,7 +2701,15 @@ $page = 'home';
 
 
 
-													<a href="news-details/<?php echo $value['id']; ?>/<?php echo str_replace(' ', '-', $value['title']); ?>/"><p class="text-black"><b><?php echo substr($value['title'], 0, 62); ?></b></p></a>
+													<a href="news-details/<?php echo $value['id']; ?>/<?php echo str_replace(' ', '-', $value['title']); ?>/"><p class="text-black"><b><?php 
+															mb_internal_encoding("UTF-8");
+															$string = $value['title'];
+															$mystring = mb_substr($string,0,62);
+															$textlen=mb_strlen($string);
+															if($textlen > 62){echo $mystring.'...';}
+															else{echo $mystring;}
+
+															?></b></p></a>
 
 
 
@@ -2698,11 +2725,11 @@ $page = 'home';
 
 
 
-													<p class="text-center" style="text-align: center;"><?php //echo C::contentMorewithoutlink($value['newsDesc'], 150); ?><?php echo substr($value['newsDesc'], 0, 201); 
-
-													if(mb_strlen($value['newsDesc'], 'UTF-8') > 201){ 		
-														echo '...';
-													}
+													<p class="text-center" style="text-align: center;"><?php 
+															mb_internal_encoding("UTF-8");
+															$string = $value['newsDesc'];
+															$mystring = mb_substr($string,0,201);
+															echo $mystring.'...';
 													?></p>
 
 

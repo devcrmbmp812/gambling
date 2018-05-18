@@ -224,14 +224,15 @@ $pagination = '';
 
 					$hotNewType = '<span class="card-tag-red">HOT</span>';
 
-				} elseif($value['isHot'] == "N"){
+				} else if($value['isHot'] == "N"){
 
 					$hotNewType = '<span class="card-tag-blue">NEW</span>';
 
-				}else{
+				}else if($value['isHot'] == "0"){
+					$hotNewType = '<span></span>';										
 
+				} else {
 					$hotNewType = '<span class="card-tag-private">비공개</span>';
-
 				}
 
 
@@ -274,7 +275,7 @@ $pagination = '';
 
 						<div class="ask-cards">
 
-							<div class="ask-item-web-card">
+							<div class="ask-item-web-card" style="height: 292px ! important;">
 
 								<div class="front">
 
@@ -312,9 +313,16 @@ $pagination = '';
 
 									<div class="playNow" style="margin-top: -1px;"><!-- custom-play-now -->
 
-										<a href="http://'.$value['link'].'" class="btn btn-ask btn-w100"><b>PLAY NOW</b></a>
+										<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>사이트 바로가기</b></a>
 
-									</div>
+										<input type="hidden" class="hiddenpopup" name="popupjoincode" value="'.$value['joinCode'].'">
+										<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="';
+										if(strpos($value['link'], 'http') !== false ) 
+											{echo $value['link'];} 
+										else {echo 'http://'.$value['link'];}
+											echo '">';
+
+									echo '</div>
 
 								</div>
 

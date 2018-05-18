@@ -417,22 +417,22 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 													</div>
 
 													<div class="cardLogo">
-
 														<?php
 														if($value['isHot'] == "H"){
 														?>
 														<span class="card-tag-red">HOT</span>
 														<?php
-														} elseif($value['isHot'] == "N"){
+														} else if($value['isHot'] == "N"){
 														?>
 														<span class="card-tag-blue">NEW</span>
 														<?php
-														}
-														else
-														{
+														} else if($value['isHot'] == "0"){
 														?>
-														<span class="card-tag-private">비공개</span>
-															<?php
+														<?php
+														} else {
+														?>
+															<span class="card-tag-private">비공개</span>
+														<?php
 														}
 														?>
 														<a href="sports-details/<?php echo $value['id'];?>/<?php echo str_replace(' ', '-', $value['sportsName']);?>/"><img src="<?php echo $value['sportsImage']; ?>" width="196px" height="149px" alt=""></a>

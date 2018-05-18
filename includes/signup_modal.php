@@ -40,7 +40,7 @@
 								</div> -->
 								<br>
 								<div class="clearfix">
-									<?php echo $output; ?>
+									<?php echo $output_signup; ?>
 								</div>
 		                    </form>
 		                </div>

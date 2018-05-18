@@ -19,12 +19,12 @@ $Common = new Common();
 						 	<div class="col-md-12 text-white complain-form">
 							 	<div class="">
 						 			<div class="col-md-12">
-						 				<h4 class="page-header">You need to add nickname to continue... </h4>
+						 				<h4 class="page-header">배팅타임에서 사용할 닉네임을 설정해주세요. </h4>
 									    <div class="panel-group" id="accordion">
 										    <div class="panel panel-default custom-panel">
 										      	<div class="panel-heading">
 											        <h4 class="panel-title">
-										          		<a data-toggle="" data-parent="#accordion" href="#1">Please enter the nickname</a>
+										          		<a data-toggle="" data-parent="#accordion" href="#1">닉네임을 입력해주세요.</a>
 											        </h4>
 										      	</div>
 									      		<div id="1" class="panel-  in">
@@ -32,11 +32,11 @@ $Common = new Common();
 										        		<form action="index.php" method="post" enctype="multipart/form-data">
 											 				
 											 				<div class="form-group custom-fields" id="frmCheckNickName">
-											 					<label for="nickName"> Nickname</label>
+											 					<label for="nickName"> 닉네임</label>
 											 						<input type="text" name="nickName" id="nickName" class="form-control" placeholder="Nick Name" required /><span id="user-availability-status" class="text-yellow"></span>
 											 				</div>
 														    <div>
-														      	<button type="submit" class="btn btn-ask-red btn-w50" style="margin-left:0px;margin-right:2px;">Continue</button>
+														      	<button type="submit" class="btn btn-ask-red btn-w50" style="margin-left:0px;margin-right:2px;">등록하기</button>
 														    </div>
 														    <style>
 																.custom-fields input{

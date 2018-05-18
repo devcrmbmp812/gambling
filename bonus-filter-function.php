@@ -107,42 +107,34 @@ $pagination = '';
 
 			echo '<div class="col-md-3 col-sm-3 col-xs-3 padding0 ask-land-web-card">
 					<div class="ask-cards">
-						<div class="ask-item-bonus-card">
+						<div class="ask-item-bonus-card" style="height: 292px ! important;">
 							<div class="front">
 								<div class="cardHeader">
-                                    <a href="'.$detailsLink.'"><h5>'.$data['bonustype'].'</h5></a>
-									<span class="fa fa-info info" style="font-size:10px;"></span>
+                                    <a href="'.$detailsLink.'"><h5>'.$data['bonusName'].'</h5></a>
+									<span class="fa fa-info info" style="font-size:14px;"></span>
                                 </div>
                                 <div class="cardLogo" style="overflow:hidden;">
-                                    <a href="'.$detailsLink.'"><img src="'.$data['bonusImage'].'" class="img-responsive" style="height:87px;"  alt=""></a>
-                                    <div class="cardReview text-center text-black '.$marginbottom3.'">
-                                    	<span class="bonus-name text-center text-uppercase '.$font12.'">'.$data['sportsName'].'</span>
-	                                    <div class="rating padding3 font13 color" style="margin-top: 0px; margin-left: 2px;">
-	                                        '.$ratinCon.'
-	                                    </div>
-	                                    <div class="ask-code">
-                                        	<p class="custom-border1">가입코드</p> <br>
-                                        	<span class="custom-border" '.$style.'>'.$data['joinCode'].'</span>
-	                                    </div>
-	                                </div>
+                                    <a href="'.$detailsLink.'"><img src="'.$data['bonusImage'].'" class="img-responsive" style="height:149px;"  alt=""></a>
                                 </div>
-                                <div class="mainView" style="overflow:hidden;">
-                                    <div class="bonus">
-                                        <div class="bonusAmount">
-                                            <span class="text-center">'.$data['bonusAmount'].'</span>
-                                        </div>
-                                        <div class="bonusType">
-                                            <span class="text-center text-uppercase '.$font121.'">'.$data['bonusName'].'</span>
-                                        </div>
+                                <div class="cardReview text-center text-black" style="overflow:hidden;">
+                                    <div class="rating padding-5 font16">
+                                    	<strong>'.$data['sportsName'].'</strong>
+                                    </div>
+                                    <div class="code padding-5">
+                                    	<p class="text-center text-black"><span style="font-size:13px;">가입코드</span><b> : '.$data['joinCode'].'</b></p>
                                     </div>
                                 </div>
-                                <div class="bonusCode text-center" '.$margintop0.'>
-                                    <span style="font-size:12px">BONUS CODE</span><br>
-                                    <span><b>'.$data['bonusCode'].'</b></span>
-                                </div>
-                                <div class="playNow custom-play-now" style="margin-top: 20px;">
-									<a href="http://'.$data['link'].'" class="btn btn-ask btn-w100"><b>GET NOW</b></a>
-								</div>
+                                
+                                <div class="playNow" style="margin-top: -1px;">
+                                	<a href="#" class="btn btn-ask btn-w100" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>사이트 바로가기</b></a>
+
+									<input type="hidden" class="hiddenpopup" name="popupjoincode" value="'.$data['joinCode'].'">
+									<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="';
+								if(strpos($data["link"], "http") !== false ) 
+									{echo $data["link"];} 
+								else {echo 'http://'.$data["link"];}
+									echo '">';
+							echo '</div>
 							</div>
 							<div class="back">
 								<div class="cardHeader">

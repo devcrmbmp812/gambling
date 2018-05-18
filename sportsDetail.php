@@ -60,7 +60,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 		Message::addMessage("You are not logged in. Please login here to post your comment", ERR);
 	}else{
 		if($Card->addSportsComments($_POST, $reqID['1'])){
-			Message::addMessage("Your comment will be displayed after verify by admin.", SUCCS);
+			Message::addMessage("방금 작성하신 댓글은 관리자의 승인 후, 등록됩니다.", SUCCS);
     	}
     	require_once('send-commentMail.php');
 	}

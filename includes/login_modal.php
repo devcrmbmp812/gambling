@@ -33,7 +33,7 @@
 								</div>
 								<br> -->
 								<div class="clearfix">
-									<?php echo $output; ?>
+									<?php echo $output_signin; ?>
 								</div>
 		                    </form>
 		                </div>

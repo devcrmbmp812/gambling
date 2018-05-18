@@ -24,7 +24,8 @@ if (isset($_SESSION['token'])) {
 }
 
 $authUrl = $gClient->createAuthUrl();
-$output = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'" class="btn btn-google w-100"><i class="fa fa-google-plus-square fa-2x pull-left" aria-hidden="true"></i>구글로 가입 신청하기</a>';
+$output_signup = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'" class="btn btn-google w-100"><i class="fa fa-google-plus-square fa-2x pull-left" aria-hidden="true"></i>구글로 가입 신청하기</a>';
+$output_signin = '<a href="'.filter_var($authUrl, FILTER_SANITIZE_URL).'" class="btn btn-google w-100"><i class="fa fa-google-plus-square fa-2x pull-left" aria-hidden="true"></i>구글로 로그인하기</a>';
 
 if ($gClient->getAccessToken()) {
 	

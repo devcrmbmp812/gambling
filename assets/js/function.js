@@ -1,8 +1,10 @@
 $(document).ready(function(){
 		var weblink = '';
 		$('.playNow').click(function(){
+			
 			var joincode = $(this).children("input.hiddenpopup").val();
 			weblink = $(this).children("input.hiddenpopupweblink").val();
+
 			$('#exampleModal span#modaljoincode').html(joincode);
 			$('#modalconfirm').click(function(){
 				window.open(weblink);
@@ -429,6 +431,17 @@ $(document).ready(function(){
             data: data, // all data will be passed here
             success: function(data){  
                 $('.AJAX-response').html(data);
+                $('.playNow').click(function(){
+					var joincode = $(this).children("input.hiddenpopup").val();
+					weblink = $(this).children("input.hiddenpopupweblink").val();
+
+					$('#exampleModal span#modaljoincode').html(joincode);
+					$('#modalconfirm').click(function(){
+						window.open(weblink);
+						$('#cancelconfirm').click();
+					});
+					
+				});
                 $('.info').click(function(){
 					$(this).parents('.ask-item-web-card').toggleClass('flipped');
 				});
@@ -451,6 +464,17 @@ $(document).ready(function(){
             data: data, // all data will be passed here
             success: function(data){  
                 $('.AJAX-response1').html(data);
+                $('.playNow').click(function(){
+					var joincode = $(this).children("input.hiddenpopup").val();
+					weblink = $(this).children("input.hiddenpopupweblink").val();
+
+					$('#exampleModal span#modaljoincode').html(joincode);
+					$('#modalconfirm').click(function(){
+						window.open(weblink);
+						$('#cancelconfirm').click();
+					});
+					
+				});
             }
         });
 	});
@@ -526,6 +550,17 @@ $(document).ready(function(){
                 $('.info').click(function(){
 					$(this).parents('.ask-item-bonus-card').toggleClass('flipped');
 				});
+				$('.playNow').click(function(){
+					var joincode = $(this).children("input.hiddenpopup").val();
+					weblink = $(this).children("input.hiddenpopupweblink").val();
+
+					$('#exampleModal span#modaljoincode').html(joincode);
+					$('#modalconfirm').click(function(){
+						window.open(weblink);
+						$('#cancelconfirm').click();
+					});
+					
+				});
             }
         });
 	});
@@ -546,6 +581,18 @@ $(document).ready(function(){
             data: data, // all data will be passed here
             success: function(data){  
                 $('.AJAX-response1').html(data);
+                $('.playNow').click(function(){
+			
+					var joincode = $(this).children("input.hiddenpopup").val();
+					weblink = $(this).children("input.hiddenpopupweblink").val();
+
+					$('#exampleModal span#modaljoincode').html(joincode);
+					$('#modalconfirm').click(function(){
+						window.open(weblink);
+						$('#cancelconfirm').click();
+					});
+					
+				});
             }
         });
 	});

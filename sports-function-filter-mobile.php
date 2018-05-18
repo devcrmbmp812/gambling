@@ -132,15 +132,28 @@ $pagination = '';
 			echo	'<div class="col-xs-12" id="formobile">
 						<div class="media">
 						  	<div class="media-left">
-						    	<img src="'.$value['sportsImage'].'" class="media-object mobile-mdeia-object">
+						  		<a href="'.$detailsLink.'">
+						    		<img src="'.$value['sportsImage'].'" class="media-object mobile-mdeia-object">
+						    	</a>
 						  	</div>
 						  	<div class="media-body">
 						    	<a class="media-left-link" href="'.$detailsLink.'"><h5 class="media-heading">'.$value['sportsName'].'</h5></a>
 						    	<div class="rating font16">
 									'.$ratinCon.'
 								</div>
-								<p class="text-white mobile-join-code">JOIN CODE<span> : '.$value['joinCode'].'</span></p>
-								<a href="http://'.$value['link'].'" class="btn btn-default mobile-button"><b>PLAY NOW</b></a>
+								<p class="text-white mobile-join-code">가입코드<span> : '.$value['joinCode'].'</span></p>
+								<div class="playNow"><!-- custom-play-now -->
+
+												<a href="#" class="btn btn-default mobile-button" data-toggle = "modal" data-target="#exampleModal" id = "modalShow"><b>사이트 바로가기</b></a>
+
+												<input type="hidden" class="hiddenpopup" name="popupjoincode" value="'.$value['joinCode'].'">
+												<input type="hidden" class="hiddenpopupweblink" name="popupweblink" value="';
+												if(strpos($value['link'], 'http') !== false ) 
+													{echo $value['link'];} 
+												else {echo 'http://'.$value['link'];}
+													echo '">';
+
+											echo '</div>
 						  	</div>
 						</div>
 					</div><!--col-xs-12-->';

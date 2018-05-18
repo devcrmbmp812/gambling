@@ -176,7 +176,15 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 													<div class="news-short-desc">
 
-														<p class="text-black"><?php echo substr($value['title'], 0, 81); ?></p>
+														<p class="text-black"><?php 
+															mb_internal_encoding("UTF-8");
+															$string = $value['title'];
+															$mystring = mb_substr($string,0,33);
+															$textlen=mb_strlen($string);
+															if($textlen > 33){echo $mystring.'...';}
+															else{echo $mystring;}
+															
+														?></p>
 
 													</div>
 
