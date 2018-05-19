@@ -180,7 +180,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0){
 
 							<?php
 
-								$result = $User->query("SELECT `id`, `title`, `newsDesc`, `newsImage`, `createdOn` FROM `tblNewsBlog` WHERE `id` != '" . $_SESSION['value']['0']['id'] . "' AND `isNews` = 'N' ORDER BY `createdOn` desc LIMIT 3");
+								$result = $User->query("SELECT `id`, `title`, `newsDesc`, `newsImage`, `createdOn` FROM `tblNewsBlog` WHERE `id` != '" . $_SESSION['value']['0']['id'] . "' AND `isNews` = 'B' ORDER BY `createdOn` desc LIMIT 3");
 
 								if(is_array($result) && count($result) > 0){
 

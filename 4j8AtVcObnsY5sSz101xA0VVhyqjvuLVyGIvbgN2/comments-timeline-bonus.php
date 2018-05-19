@@ -22,7 +22,7 @@ if(isset($_GET['verify'])){
 	$Common->redirect($uri);
 }
 if(isset($_GET['del'])){
-	$User->query("DELETE FROM `tblBonusComment` WHERE id = '" . $_GET['id'] . "'");
+	$User->query("DELETE FROM `tblBonusComment` WHERE id = '" . $_GET['del'] . "'");
 	$Common->redirect($uri);
 }
 
