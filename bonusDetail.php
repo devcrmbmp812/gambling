@@ -133,7 +133,8 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 									<div class="details-page-name">
 
-										<span class="text-capitalize"><?php echo $_SESSION['value']['0']['sportsName']; ?></span><br>
+										<span class="text-capitalize"><?php echo $_SESSION['value']['0']['bonusName']; ?>&nbsp-&nbsp<?php echo $_SESSION['value']['0']['sportsName']; ?></span><br/>
+										<!-- <span class="text-capitalize"><?php echo $_SESSION['value']['0']['sportsName']; ?></span><br> -->
 
 										<span><?php echo $_SESSION['value']['0']['description']; ?></span><br>
 
@@ -233,7 +234,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 										<span class="text-capitalize"><?php echo $_SESSION['value']['0']['bonusAmount']; ?> <?php echo $_SESSION['value']['0']['bonustype']; ?></span><br>
 
-										<span><?php echo $_SESSION['value']['0']['sportsName']; ?></span><br>
+										<span><?php echo $_SESSION['value']['0']['description']; ?></span><br>
 
 									</div>
 

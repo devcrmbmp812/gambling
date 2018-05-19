@@ -48,9 +48,11 @@ $pagination = '';
 		    $sql.=" AND `dwMethods` IN ('".implode("','",$_GET['dwMethods'])."')";
 		endif;
 
-		// if(isset($_GET['maxWithdrawlLimit']) && $_GET['maxWithdrawlLimit']!="") :
-		//     $sql.=" AND `maxWithdrawlLimit` IN ('".implode("','",$_GET['maxWithdrawlLimit'])."')";
-		// endif;
+		if(isset($_GET['maxWithdrawlLimit']) && $_GET['maxWithdrawlLimit']!="") :
+
+		    $sql.=" AND `maxWithdrawlLimit` IN ('".implode("','",$_GET['maxWithdrawlLimit'])."')";
+
+		endif;
 
 		if(isset($_GET['everytimeDepositeBonus']) && $_GET['everytimeDepositeBonus']!="") :
 		    $sql.=" AND `everytimeDepositeBonus` IN ('".implode("','",$_GET['everytimeDepositeBonus'])."')";
@@ -68,6 +70,13 @@ $pagination = '';
 		    $sql.=" AND `rollingBonus` IN ('".implode("','",$_GET['rollingBonus'])."')";
 		endif;
 
+		if(isset($_GET['singleBet']) && $_GET['singleBet']!="") :
+
+		    $sql.=" AND `singleBet` IN ('".implode("','",$_GET['singleBet'])."')";
+
+		endif;
+
+
 		if(isset($_GET['liveChat']) && $_GET['liveChat']!="") :
 		    $sql.=" AND `liveChat` IN ('".implode("','",$_GET['liveChat'])."')";
 		endif;
@@ -77,11 +86,11 @@ $pagination = '';
 		// endif;
 
 		if(isset($_GET['maxPrizeMoney']) && $_GET['maxPrizeMoney']!="") :
-		    $sql.=" AND `maxPrizeMoney` <= '" . $_GET['maxPrizeMoney'] . "'";
+		    $sql.=" AND `maxPrizeMoney` IN ('".implode("','",$_GET['maxPrizeMoney'])."')";
 		endif;
 
 		if(isset($_GET['maxBettingAmount']) && $_GET['maxBettingAmount']!="") :
-		    $sql.=" AND `maxBettingAmount` <= '" . $_GET['maxBettingAmount'] . "'";
+		    $sql.=" AND `maxBettingAmount` IN ('".implode("','",$_GET['maxBettingAmount'])."')";
 		endif;
 
 		// if(isset($_GET['minBettingAmount']) && $_GET['minBettingAmount']!="") :

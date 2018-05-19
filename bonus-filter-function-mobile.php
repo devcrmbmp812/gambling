@@ -41,6 +41,10 @@ $pagination = '';
 	    $sql.=" AND `rating` IN ('".implode("','",$_GET['rating'])."')";
 	endif;
 
+	if(isset($_GET['wageringRequirements']) && $_GET['wageringRequirements']!="") :
+	    $sql.=" AND `wageringRequirements` IN ('".implode("','",$_GET['wageringRequirements'])."')";
+	endif;
+
 	if(isset($_GET['rollingCondition']) && $_GET['rollingCondition']!="") :
 	    $sql.=" AND `rollingCondition` IN ('".implode("','",$_GET['rollingCondition'])."')";
 	endif;
