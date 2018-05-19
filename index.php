@@ -500,11 +500,11 @@ $page = 'home';
 
 
 
-								<h3 class="text-uppercase"><a href="sports/" class="text-white">배팅사이트</a> <span class="pull-right" style="font-size:12px;line-height:30px;"><a href="sports/" class="text-white">전체보기</a></span></h3><!--  border-bottom-5 -->
+								<h3 class="text-uppercase"><a href="sports/" class="text-white">검증된 배팅사이트</a> <span class="pull-right" style="font-size:12px;line-height:30px;"><a href="sports/" class="text-white">전체보기</a></span></h3><!--  border-bottom-5 -->
 
 
 
-								<p class="custom-p custom-text">자신에게 맞는 배팅사이트를 찾고 계신가요? 원하는 조건에 맞춰 적합한 배팅사이트를 찾아보세요!<br>배팅타임에서는 사전에 모든 사이트를 검열하여 유저 분들이 안전하게 즐길 수 있도록 최선을 다하고 있습니다.</p>
+								<p class="custom-p custom-text">배팅타임에 등록된 어떠한 배팅사이트를 이용하더라도 100% 안전을 보장합니다.<br>먹튀가 발생할 경우, 100% 전액 금전적인 보상을 해드립니다.</p>
 
 
 
@@ -579,8 +579,12 @@ $page = 'home';
 												<div class="cardReview text-center text-black">
 
 													<div class="rating padding-5 font16">
+														<?php
+														$iddd = $value['id']; 
+														echo '<p class="text-black" style="margin-bottom:2px;">'. $sportsExtraText[$iddd] .'</p>'; 
+														?>
 														<?php 
-				                                    		if ($value['rating'] == 1) {
+				                                    		/*if ($value['rating'] == 1) {
 			                                    			?>
 			                                    			<i class="fa fa-star first" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></i><i class="fa fa-star-o" aria-hidden="true"></i></i><i class="fa fa-star-o" aria-hidden="true"></i></i><i class="fa fa-star-o" aria-hidden="true"></i></i>
 			                                    			<?php
@@ -643,7 +647,7 @@ $page = 'home';
 
 
 
-					                                    		}
+					                                    		}*/
 
 
 
@@ -967,12 +971,15 @@ $page = 'home';
 
 
 									    	<div class="rating font16">
-
+												<?php
+												$iddd = $value['id']; 
+												echo '<p class="text-white" style="margin-bottom:2px;">'. $sportsExtraText[$iddd] .'</p>'; 
+												?>
 
 
 												<?php 
 
-
+													/*
 
 		                                    		if ($value['rating'] == 1) {
 
@@ -1054,7 +1061,7 @@ $page = 'home';
 
 
 
-			                                    		}
+			                                    		} */
 
 
 

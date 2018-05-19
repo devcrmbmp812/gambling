@@ -94,7 +94,12 @@ if($page == ''){
 	$page = $User->query("SELECT `metaTitle`, `metaDesc`, `metaKeyword` FROM `tblContent` WHERE `categoryPage` = '" . $page . "' LIMIT 0,1");
 }
 
-
+$sportsExtraText = array(
+	'61' => '[ 라이브 소액유저 추천 ]', 
+	'62' => '[ 라이브 고액유저 추천 ]', 
+	'64' => '[ 스포츠 단폴고액 추천 ]', 
+	'65' => '[ 미니게임 고액유저 추천 ]' 
+);
 
 
 ?>
@@ -119,6 +124,8 @@ if($page == ''){
 <!-- Start custom CSS (Your own theme, overrides all of the above styles) -->
 <link href="<?php echo HOST;?>assets/css/style.css" rel="stylesheet">
 <link href="<?php echo HOST;?>assets/css/custom.css" rel="stylesheet">
+<link href="<?php echo HOST;?>assets/css/forum.css" rel="stylesheet">
+<link href="<?php echo HOST;?>assets/css/chosen.css" rel="stylesheet">
 <link href="<?php echo HOST;?>assets/css/hover.css" rel="stylesheet">
 <link href="<?php echo HOST;?>assets/css/notosanskr.css" rel="stylesheet">
 <link href="<?php echo HOST;?>assets/css/ripple.css" rel="stylesheet">
@@ -285,17 +292,17 @@ if($page == ''){
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav ask-custom-nav">
 								<!-- <li class=""><a href="index.php" class="text-uppercase" style="color:#fff;">HOME <span class="sr-only">(current)</span></a></li> --><!-- nav-active -->
-								<li class="dropdown">
+								<li class=""><a href="sports/" class="text-uppercase" style="color:#fff;">스포츠</a></li>
+								<!-- <li class="dropdown">
 								  <a href="sports/" class="dropdown-toggle text-white disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">스포츠</a>
 									<ul class="dropdown-menu ask-list">
 										<li><a href="online-sports/" >일반 배팅사이트</a></li>
 										<li><a href="newest-sports/" >신규 배팅사이트</a></li>
 										<li><a href="verified-sports/" >검증된 배팅사이트</a></li>
 										<li><a href="bitcoin-sports/" >비트코인 배팅사이트</a></li>
-										<!-- <li><a href="mobile-sports/" >라이브 배팅사이트</a></li> -->
 										<li><a href="livebetting-sports/">라이브 배팅사이트</a></li>
 									</ul>
-								</li>
+								</li> -->
 							<!--	<li class=""><a href="mini-game/" class="text-uppercase" style="color:#fff;"> 	미니게임</a></li> -->
 								<li class="dropdown">
 								  <a href="bonus/" class="dropdown-toggle text-white disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">보너스</a>
@@ -378,7 +385,8 @@ if($page == ''){
 							<ul class="nav navbar-nav ask-custom-nav">
 								<!-- <li class=""><a href="index.php" class="text-uppercase" style="color:#fff;">HOME <span class="sr-only">(current)</span></a></li> --><!-- nav-active -->
 								<!--<li><a href="javascript:void(0)"> &nbsp; </a></li>-->
-								<li class="dropdown child-drop">
+								<li class=""><a href="sports/" class="text-uppercase" style="color:#fff;">스포츠</a></li>
+								<!-- <li class="dropdown child-drop">
 								  <a href="javascript:void(0)" onclick="redirect_sport();" class="dropdown-toggle text-white disabled" id="mobile_more_sport" role="button" aria-haspopup="true" aria-expanded="false"><span class="sport_span">스포츠</span></a>
 								  <button class="more_span" style="width:72px;">펼쳐보기</button>
 									<ul class="dropdown-menu">
@@ -387,10 +395,8 @@ if($page == ''){
 										<li><a href="verified-sports/">검증된 배팅사이트</a></li>
 										<li><a href="bitcoin-sports/">비트코인 배팅사이트</a></li>
 										<li><a href="livebetting-sports/">라이브 배팅사이트</a></li>
-										<!--<li><a href="mobile-sports/" >라이브 배팅사이트</a></li>
-										<li><a href="sadari/">사다리 배팅 사이트</a></li>-->
 									</ul>
-								</li>
+								</li> -->
 <!-- 								<li class=""><a href="mini-game/" class="text-uppercase" style="color:#fff;">미니게임</a></li> -->
 								<li class="dropdown child-drop">
 								  <a href="javascript:void(0)" onclick="redirect_bonus();" class="dropdown-toggle text-white disabled" id="mobile_more_bonus" role="button" aria-haspopup="true" aria-expanded="false"><span class="bonus_span" onclick="window.location.href = 'bonus/';">보너스</span></a>

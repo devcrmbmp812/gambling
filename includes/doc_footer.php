@@ -91,7 +91,7 @@
 
 <!-- 									<li><a href="sports-policy.php">배팅타임 소개</a></li> -->
 
-									<li><a href="certificate-of-trust.php">사이트 등록 및 검증약관</a></li>
+									<li><a href="certificate-of-trust.php">사이트 등록약관</a></li>
 
 									<li><a href="posting-guidlines.php/">포스팅 가이드라인</a></li>
 
@@ -194,8 +194,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="assets/js/function.js"></script>
+<script src="assets/js/forum.js"></script>
 <script src="assets/js/readmore.js"></script>
 <script src="assets/js/index.js"></script>
+<script src="assets/js/advanced.js"></script>
+<script src="assets/js/wysihtml5-0.3.0.js"></script>
 <script src="lib/fancybox/jquery.fancybox.js"></script>
 <script>
 	$('#content-read-more').readmore({speed: 500});
@@ -348,6 +351,13 @@ s0.parentNode.insertBefore(s1,s0);
 			$(this).parents('.modal').find('.close').click();
 		});
 
+</script>
+<script>
+  var editor = new wysihtml5.Editor("min-text", {
+    toolbar:      "toolbar",
+    stylesheets:  "../assets/css/editorstyle.css",
+    parserRules:  wysihtml5ParserRules
+  });
 </script>
 
 <script type="text/javascript">
