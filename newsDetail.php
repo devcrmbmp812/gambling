@@ -368,7 +368,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0){
 
 								<?php
 
-								$result = $User->query("SELECT `TSC`.`id`, `TSC`.`gdComments`, `TSC`.`badComments`, `TSC`.`rating`, `TSC`.`updatedOn`, `TU`.`userId` FROM `tblNewsComment` as `TSC`, `tblUser` as `TU`  WHERE `TSC`.`isRecommanded` = 'Y' AND `TSC`.`userId` = `TU`.`id` AND `TSC`.`newsId` = '" . $reqID[1] . "'");
+								$result = $User->query("SELECT `TSC`.`id`, `TSC`.`gdComments`, `TSC`.`badComments`, `TSC`.`rating`, `TSC`.`updatedOn`, `TU`.`userId`,`TU`.`nickName` FROM `tblNewsComment` as `TSC`, `tblUser` as `TU`  WHERE `TSC`.`isRecommanded` = 'Y' AND `TSC`.`userId` = `TU`.`id` AND `TSC`.`newsId` = '" . $reqID[1] . "'");
 
 								if(is_array($result) && count($result) > 0){
 
@@ -478,7 +478,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0){
 
 														<h5 style="margin-top: 0px;">
 
-															<span class="text-yellow"><b><?php echo $value['userId']; ?></b></span>
+															<span class="text-yellow"><b><?php echo $value['nickName']; ?></b></span>
 
 														</h5>
 
@@ -529,7 +529,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0){
 					                                    		}
 
 					                                    	?>
-
+					                                    	<?php echo explode(' ', $value['updatedOn'])[0];?>
 					                                    </span></p>
 
 													</div>

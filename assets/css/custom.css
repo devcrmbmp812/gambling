@@ -2946,6 +2946,9 @@ input[name="range1"]::-webkit-slider-thumb:after{
   .mobile-hide-letter {
     display: none!important;
   }
+  .arrow-content {
+  	width: 100%;
+  }
 }
 
 .more_span{

@@ -680,7 +680,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 														<h5 style="margin-top: 0px;">
 
-															<span class="text-yellow"><b><?php echo $value['userId']; ?></b></span>
+															<span class="text-yellow"><b><?php echo $value['nickName']; ?></b></span>
 
 														</h5>
 
@@ -731,7 +731,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 					                                    		}
 
 					                                    	?>
-
+					                                    	<?php echo explode(' ', $value['updatedOn'])[0];?>
 					                                    </span></p>
 
 													</div>

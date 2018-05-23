@@ -168,6 +168,24 @@ class User extends Base {
         }
         return false;
     }
+    public static function groupId($id){
+        $User = new User();
+        if((int)$id > 0 && $result = $User->query("SELECT `groupId` FROM `tblUser` WHERE `id` = '" . $id . "' LIMIT 0, 1")){
+            if(is_array($result) && count($result) > 0){
+                return $result[0]['groupId'];
+            }
+        }
+        return false;
+    }
+    public static function userId($id){
+        $User = new User();
+        if((int)$id > 0 && $result = $User->query("SELECT `userId` FROM `tblUser` WHERE `id` = '" . $id . "' LIMIT 0, 1")){
+            if(is_array($result) && count($result) > 0){
+                return $result[0]['userId'];
+            }
+        }
+        return false;
+    }
 
     public function logout(){
         if(isset($_SESSION['admin']) && isset($_SESSION['admin']['id']) && (int)$_SESSION['admin']['id'] > 0){
