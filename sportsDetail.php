@@ -266,7 +266,11 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 										<?php $mDesc = $_SESSION['value']['0']['description']; ?>
 
-										<span style="font-size:15px;font-weight:normal;"><?php echo substr($mDesc, 0, 70) ; ?><span class="m-desc" style="font-size:15px;font-weight:normal;"><?php echo substr($mDesc, 70) ; ?></span><span class="dot">..</span> <a href="javascript:void(0);" class="read-more mDesc">자세히 보기</a></span><br>
+										<span style="font-size:15px;font-weight:normal;"><?php mb_internal_encoding("UTF-8");
+															$string = $mDesc;
+															$mystring = mb_substr($string,0,70);
+															$textlen=mb_strlen($string);
+															echo $mystring; ?><span class="m-desc" style="font-size:15px;font-weight:normal;"><?php echo mb_substr($mDesc, 70) ; ?></span><span class="dot">..</span> <a href="javascript:void(0);" class="read-more mDesc">자세히 보기</a></span><br>
 
 									</div>
 
@@ -280,7 +284,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 									<div class="details-page-joinCode-mobile">
 
-										<span>가입코드</span><br>
+										<span>가입코드&nbsp :&nbsp </span>
 
 										<span><?php echo $_SESSION['value']['0']['joinCode']; ?></span>
 

@@ -127,12 +127,13 @@ $sportsExtraText = array(
 <link href="<?php echo HOST;?>assets/css/forum.css" rel="stylesheet">
 <link href="<?php echo HOST;?>assets/css/chosen.css" rel="stylesheet">
 <link href="<?php echo HOST;?>assets/css/hover.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
 <link href="<?php echo HOST;?>assets/css/notosanskr.css" rel="stylesheet">
 <link href="<?php echo HOST;?>assets/css/ripple.css" rel="stylesheet">
 <link href="<?php echo HOST;?>assets/css/responsive.css" rel="stylesheet">
 <link href="<?php echo HOST;?>assets/css/animate.css" rel="stylesheet">
 <link href="<?php echo HOST;?>assets/css/editor-text.css" rel="stylesheet">
-<link href="<?php echo HOST;?>lib/fancybox/jquery.fancybox.css" rel="stylesheet">
+<!-- <link href="<?php echo HOST;?>lib/fancybox/jquery.fancybox.css" rel="stylesheet"> -->
 <link rel="stylesheet" href="<?php echo HOST;?>assets/css/jquery.rateyo.min.css"/>
 <link rel="stylesheet" href="<?php echo HOST;?>assets/css/lightbox.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
@@ -293,7 +294,7 @@ $sportsExtraText = array(
 							<ul class="nav navbar-nav ask-custom-nav">
 								<!-- <li class=""><a href="index.php" class="text-uppercase" style="color:#fff;">HOME <span class="sr-only">(current)</span></a></li> --><!-- nav-active -->
 								<li class=""><a href="sports/" class="text-uppercase" style="color:#fff;">스포츠</a></li>
-								<!-- <li class="dropdown">
+								<!-- <li class="dropdown nav-dropdown">
 								  <a href="sports/" class="dropdown-toggle text-white disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">스포츠</a>
 									<ul class="dropdown-menu ask-list">
 										<li><a href="online-sports/" >일반 배팅사이트</a></li>
@@ -304,7 +305,7 @@ $sportsExtraText = array(
 									</ul>
 								</li> -->
 							<!--	<li class=""><a href="mini-game/" class="text-uppercase" style="color:#fff;"> 	미니게임</a></li> -->
-								<li class="dropdown">
+								<li class="dropdown nav-dropdown">
 								  <a href="bonus/" class="dropdown-toggle text-white disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">보너스</a>
 									<ul class="dropdown-menu ask-list">
 										<li><a href="welcome-bonus/" >신규 첫충 보너스</a></li>
@@ -317,7 +318,7 @@ $sportsExtraText = array(
 										<li><a href="other-bonus/" >기타 보너스</a>
 									</ul>
 								</li>
-								<li class="dropdown">
+								<li class="dropdown nav-dropdown">
 								  <a href="complaints/" class="dropdown-toggle text-uppercase text-white disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">사이트 분쟁</a>
 									<ul class="dropdown-menu ask-list">
 										<li><a href="submit-complaint/" >분쟁해결 신청하기</a></li>

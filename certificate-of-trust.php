@@ -35,7 +35,7 @@ $page = 'certificate of trust';
 								?>
 							</div>
 							<div class="ask-page-content-body"><!--  -->
-								<div class="content" style="margin-top: -11px; margin-left: 0px; padding-top: 0px;">
+								<div class="content certificate_mobile_image" style="margin-top: -11px; margin-left: 0px; padding-top: 0px;">
 									<article class="text-white"><?php echo $result[0]['categoryContent']; ?></article>
 								</div>
 							</div>

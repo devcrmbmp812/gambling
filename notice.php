@@ -194,7 +194,7 @@ $page = 'notice';
 
 											?>
 
-											<span class="text-white"><?php echo $date[0]; ?></span>
+											<span class="text-white notice_date_mobile"><?php echo $date[0]; ?></span>
 
 										</h5>
 

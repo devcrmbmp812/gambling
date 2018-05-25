@@ -302,7 +302,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 
 
-								$sql.=" ORDER BY `id` ASC, `bonusType` ASC" . $pullSQL;
+								$sql.=" ORDER BY `updatedOn` DESC" . $pullSQL;
 
 
 

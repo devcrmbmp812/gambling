@@ -199,7 +199,8 @@
 <script src="assets/js/index.js"></script>
 <script src="assets/js/advanced.js"></script>
 <script src="assets/js/wysihtml5-0.3.0.js"></script>
-<script src="lib/fancybox/jquery.fancybox.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<!-- <script src="lib/fancybox/jquery.fancybox.js"></script> -->
 <script>
 	$('#content-read-more').readmore({speed: 500});
 </script>

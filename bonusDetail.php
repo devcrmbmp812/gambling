@@ -248,7 +248,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 									<div class="details-page-joinCode-mobile">
 
-										<span>가입코드</span><br>
+										<span>가입코드&nbsp :&nbsp </span>
 
 										<span><?php echo $_SESSION['value']['0']['joinCode']; ?></span>
 
@@ -1217,9 +1217,9 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 										<div class="media">
 
 										  	<div class="media-left">
-
-										    	<img src="<?php echo $value['bonusImage'];?>" class="media-object mobile-mdeia-object">
-
+										  		<a href="bonus-details/<?php echo $value['id']?>/<?php echo $value['bonusName'];?>">
+										    		<img src="<?php echo $value['bonusImage'];?>" class="media-object mobile-mdeia-object">
+										    	</a>
 										  	</div>
 
 										  	<div class="media-body">
@@ -1437,7 +1437,9 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 										  	<div class="media-left">
 
-										    	<img src="<?php echo $value['bonusImage'];?>" class="media-object mobile-mdeia-object">
+										  		<a href="bonus-details/<?php echo $value['id']?>/<?php echo $value['bonusName'];?>">
+										    		<img src="<?php echo $value['bonusImage'];?>" class="media-object mobile-mdeia-object">
+										    	</a>
 
 										  	</div>
 
@@ -1477,11 +1479,10 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 					</div><!-- col-lg-9 col-md-9 -->
 
-					<div class="col-lg-3 col-md-3 sticky_column" style="padding-left: 0px;">
+				</div>
+				<div class="col-lg-3 col-md-3 sticky_column" style="padding-left: 0px;">
 
-						<?php require_once('includes/sportsRecommend.php'); ?>
-
-					</div>
+					<?php require_once('includes/sportsRecommend.php'); ?>
 
 				</div><!-- row -->
 

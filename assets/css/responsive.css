@@ -622,13 +622,19 @@
 		height: 120px;
 		border-radius: 50%;
 	}
+	.details-page-joinCode-mobile{
+		background: #196c79;
+		padding: 3px;
+	}
 	.details-page-joinCode-mobile span:first-child{
-		font-size: 14px !important;
+		font-size: 18px !important;
 		font-weight: 700;
 	}
 	.details-page-joinCode-mobile span:last-child{
-		font-size: 28px !important;
+		font-size: 24px !important;
 		font-weight: 700;
+		border: 2px solid #002c47;
+		padding: 2px;
 	}
 	.details-page-name span:last-child{
 		text-align: justify !important; 
@@ -663,7 +669,7 @@
 		font-size: 13px !important;
 	}
 	.comment-preview-header{
-		line-height: 50px;
+		line-height: 30px;
 	}
 }
 @media only screen and (min-width: 340px) {

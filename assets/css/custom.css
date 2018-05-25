@@ -2934,7 +2934,7 @@ input[name="range1"]::-webkit-slider-thumb:after{
 	color:#fff !important;
 }
 
-.news-about figure, .news-about figure img, .content.newsDescSec p, .content.newsDescSec p img{
+.news-about figure, .news-about figure img, .content.newsDescSec p, .content.newsDescSec p img, .certificate_mobile_image p img{
 	width:100% !important;
 	height:auto !important;
 }
@@ -2949,6 +2949,8 @@ input[name="range1"]::-webkit-slider-thumb:after{
   .arrow-content {
   	width: 100%;
   }
+
+  .notice_date_mobile:before { content: ' '; display: block; }
 }
 
 .more_span{

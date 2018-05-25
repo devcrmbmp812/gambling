@@ -310,7 +310,11 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0){
 
 									  	<div class="media-left">
 
-									    	<img src="<?php echo $value['newsImage']; ?>" class="media-object mobile-mdeia-object">
+									  		<a href="news-details/<?php echo $value['id']; ?>/<?php echo str_replace(' ', '-', $value['title']); ?>/">
+
+									    		<img src="<?php echo $value['newsImage']; ?>" class="media-object mobile-mdeia-object">
+
+									    	</a>
 
 									  	</div>
 
@@ -328,7 +332,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0){
 
 												$date = date_create($date);
 
-											 	$postDate = date_format($date, 'F d , Y')
+											 	$postDate = date_format($date, 'm. d. Y')
 
 											?>
 

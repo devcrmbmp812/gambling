@@ -306,7 +306,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 											$date = date_create($date);
 
-										 	$postDate = date_format($date, 'F d , Y')
+										 	$postDate = date_format($date, 'm. d. Y')
 
 										?>
 

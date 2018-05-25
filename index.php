@@ -47,7 +47,7 @@ $page = 'home';
 							<div class="carousel-caption ask-carousel-caption">
 								<h3 class="hidden-xs"><?php echo $slider['sliderHeading']; ?></h3> 
 								<div class="clearfix"></div>          
-								<p class="hidden-sm hidden-xs"><?php echo substr($slider['sliderText'], 0, 202); ?></p>
+								<p class="hidden-sm hidden-xs"><?php echo nl2br(substr($slider['sliderText'], 0, 202)); ?></p>
 								<div class="clearfix"></div>
 
 
@@ -2905,7 +2905,7 @@ $page = 'home';
 
 
 
-										 	$postDate = date_format($date, 'F d , Y')
+										 	$postDate = date_format($date, 'm. d. Y')
 
 
 
