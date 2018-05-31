@@ -92,6 +92,31 @@ $(document).ready(function(){
 			});
 		}
 
+		if($('.owl-carousel-tags').length){
+			jQuery('.owl-carousel-tags').owlCarousel({
+				loop:false,
+				margin:10,
+				nav:true,
+				autoplay:false,
+				autoWidth:true,
+				navText: [
+					'<i class="fa fa-angle-double-left"></i>',
+					'<i class="fa fa-angle-double-right"></i>'
+				],
+				responsive:{
+					0:{
+						items:1
+					},
+					600:{
+						items:2
+					},
+					1000:{
+						items:3
+					}
+				}
+			});
+		}
+
 		
 	// $(window).scroll(function(){
 	// 	var wScroll = $(this).scrollTop();

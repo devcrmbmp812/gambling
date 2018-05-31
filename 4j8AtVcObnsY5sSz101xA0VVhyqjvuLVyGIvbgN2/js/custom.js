@@ -529,6 +529,12 @@ $(document).ready(function() {
 
 		});
 	});
+
+	// $('#emailValidAdmin').click(function(){alert('hihihih');
+	// 	var _vl = $(this).data('emailid');
+
+	// 	alert(_vl);
+	// });
 	
 
 });
@@ -661,99 +667,54 @@ $(document).ready(function(){
 	
 
 	$.ajax({ 
-
 	    url: "bonusCommentnote.php", // link of your "whatever" php
-
 	    type: "GET",
-
 	    //async: true,
-
 	    //cache: false,
-
 	    data: '1', // all data will be passed here
-
 	    success: function(data){  
-
 	        $('.notice').append(data);
-
 	        var notycount = $('.notice li').length;
-
 			if(notycount == 0){
-
 				$('.notificationCount').text('0');
-
 			}else{
-
 				$('.notificationCount').text(notycount);
-
 			}
-
 	    }
-
 	});
 
 	$.ajax({ 
-
 	    url: "sportsCommentnote.php", // link of your "whatever" php
-
 	    type: "GET",
-
 	    //async: true,
-
 	    //cache: false,
-
 	    data: '1', // all data will be passed here
-
 	    success: function(data){  
-
 	        $('.notice').append(data);
-
 	        var notycount = $('.notice li').length;
-
 			if(notycount == 0){
-
 				$('.notificationCount').text('0');
-
 			}else{
-
 				$('.notificationCount').text(notycount);
-
 			}
-
 	    }
-
 	});
 
 	$.ajax({ 
-
 	    url: "sadariCommentnote.php", // link of your "whatever" php
-
 	    type: "GET",
-
 	    //async: true,
-
 	    //cache: false,
-
 	    data: '1', // all data will be passed here
-
 	    success: function(data){  
-
 	        $('.notice').append(data);
-
 	        var notycount = $('.notice li').length;
-
 			if(notycount == 0){
-
 				$('.notificationCount').text('0');
-
 			}else{
-
 				$('.notificationCount').text(notycount);
-
 			}
-
 	    }
-
 	});
 
 	$.ajax({ 
@@ -823,37 +784,127 @@ $(document).ready(function(){
 	});
 
 	$.ajax({ 
-
 	    url: "complaintnoteresponse.php", // link of your "whatever" php
-
 	    type: "GET",
-
 	    //async: true,
-
 	    //cache: false,
-
 	    data: '1', // all data will be passed here
-
 	    success: function(data){  
-
 	        $('.notice').append(data);
-
 	        var notycount = $('.notice li').length;
-
 			if(notycount == 0){
-
 				$('.notificationCount').text('0');
-
 			}else{
-
 				$('.notificationCount').text(notycount);
-
 			}
-
 	    }
-
 	});
 
+// Froum notification
+	// $.ajax({ 
+	//     url: "levelupnote.php", // link of your "whatever" php
+	//     type: "GET",
+	//     //async: true,
+	//     //cache: false,
+	//     data: '1', // all data will be passed here
+	//     success: function(data){  
+	//         $('.notice').append(data);
+	//         var notycount = $('.notice li').length;
+	// 		if(notycount == 0){
+	// 			$('.notificationCount').text('0');
+	// 		}else{
+	// 			$('.notificationCount').text(notycount);
+	// 		}
+	//     }
+	// });
+
+	$('.changeLevelupRequest').change(function(){
+		var _uId = $(this).data('user');
+		var _lID = $(this).data('levelupid');
+		var _sVal = $(this).val();
+		$.ajax({
+			url: "ajax/level-up.php",
+			type: "POST",
+			data: 'user='+_uId+'&levelid='+_lID+'&sid='+_sVal,
+			success: function(data){
+				//alert(data);
+				var _resd = data.split('@@');
+                if(_resd[1] == 0){
+                	$('.alert .red p').text(_resd[0]);
+                	$('.alert .red').show();
+                	$('.custom-pip').text(_resd[2]);
+                }else{
+                	$('.alert .green p').text(_resd[0]);
+                	$('.alert .green').show();
+                	$('.custom-pip').text(_resd[2]);
+                }
+			}
+		});
+	});
+	// changeverfication
+	$('.changeverfication').change(function(){ 
+		var _uvId = $(this).data('user');
+		var _vVal = $(this).val();
+		$.ajax({
+			url: "ajax/email-verification.php",
+			type: "POST",
+			data: 'user='+_uvId+'&sid='+_vVal,
+			success: function(data){
+				//alert(data);
+				var _resd = data.split('@@');
+                if(_resd[1] == 0){
+                	$('.alert .red p').text(_resd[0]);
+                	$('.alert .red').show();
+                }else{
+                	$('.alert .green p').text(_resd[0]);
+                	$('.alert .green').show();
+                }
+			}
+		});
+	});
+
+	//hide-show-topic
+	$('.showHideTopic').change(function(){ 
+		var _topId = $(this).data('topic');
+		var _topVal = $(this).val();
+		$.ajax({
+			url: "ajax/hide-show-topic.php",
+			type: "POST",
+			data: 'topic='+_topId+'&sid='+_topVal,
+			success: function(data){
+				//alert(data);
+				var _resd = data.split('@@');
+                if(_resd[1] == 0){
+                	$('.alert .red p').text(_resd[0]);
+                	$('.alert .red').show();
+                }else{
+                	$('.alert .green p').text(_resd[0]);
+                	$('.alert .green').show();
+                }
+			}
+		});
+	});
+
+	$('.showHideTopicreply').change(function(){ 
+		var _toprId = $(this).data('topic');
+		var _toprVal = $(this).val();
+		$.ajax({
+			url: "ajax/comment-topic-spam-show.php",
+			type: "POST",
+			data: 'topic='+_toprId+'&sid='+_toprVal,
+			success: function(data){
+				//alert(data);
+				var _resd = data.split('@@');
+                if(_resd[1] == 0){
+                	$('.alert .red p').text(_resd[0]);
+                	$('.alert .red').show();
+                }else{
+                	$('.alert .green p').text(_resd[0]);
+                	$('.alert .green').show();
+                }
+			}
+		});
+	});
 
 
 
@@ -963,6 +1014,46 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('.delete-mini').click(function(){
 		//alert($('.miniGame').val());
+	});
+});
+$(document).ready(function(){
+	var _rId = $('.reponsiveID').val();
+	$('.deleteFiles').click(function(){
+		$(this).parents('.parentresponsefiles').remove();
+		var storeImage = new Array();
+		$('.respons-files-image-show li').each(function(){
+			var _t = $(this).find('.responsFileslocalstore').val();
+			storeImage.push(_t);
+		});
+		$.ajax({ 
+		    url: "complaint-edit-ajax.php", // link of your "whatever" php
+		    type: "POST",
+		    data: 'storedImage='+storeImage+'&id='+_rId, // all data will be passed here
+		    success: function(data){  
+		        alert('Image is removed');
+		        //$('#responsFileslocalstoreajax').val(data);
+		    }
+		});
+	});
+});
+
+$(document).ready(function(){
+	var _removeFiles = $('#removeFiles');
+	//$(_removeFiles).hide();
+	$(document).on('click', '#addMoreFile', function(){
+		var _input = '<input type="file" name="complaintFils[]" class="form-control complaintFils" /><br>';
+		$(_input).insertBefore('#addMoreFile');
+		var _inputCount = $('.complaintFils').size();
+		if(_inputCount > 1){ alert(_inputCount);
+			$(_removeFiles).show();
+		}
+	});
+	$(document).on('click', '#removeFiles', function(){
+		$('.complaintFils:last').remove();
+		var _inputCount = $('.complaintFils').size();
+		if(_inputCount == 1){
+			$(_removeFiles).hide();
+		}
 	});
 });
 

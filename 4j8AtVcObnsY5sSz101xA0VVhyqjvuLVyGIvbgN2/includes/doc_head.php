@@ -29,7 +29,7 @@ $Common = new Common();
 	    header("LOCATION:index.php");
 
 	}
-
+$updatecount = $User->query("SELECT COUNT(`id`) AS `CNT` FROM `tblLevelUp` WHERE `isVerified` = 'P'");
 ?>
 
 <!DOCTYPE html>
@@ -58,11 +58,12 @@ $Common = new Common();
 	<link rel="stylesheet" href="css/chosen.css" media="all" />
 
 	<link rel="stylesheet" href="../assets/css/jquery.rateyo.min.css"/>
+	<link rel="stylesheet" href="../assets/css/editor-text.css"/>
 	
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-	<link href="lib/fancybox/jquery.fancybox.css">
+	<link href="../libs/fancybox/jquery.fancybox.css">
 
 	<!-- <link rel="stylesheet" href="../assets/css/bootstrap.min.css" media="all" /> -->
 
@@ -154,13 +155,13 @@ if( $findGroupId[0]['groupId'] == 0 ){
 
 		<li class=" <?php if( $activeNavigation == "category"){ echo "section"; }?>">
 
-			<a href="category.php"><span class="icon">&#128196;</span> Category</a>	
+			<a href="category.php"><span class="icon">&#59273;</span> Category</a>	
 
 		</li>
 
 		<li class="<?php if($activeNavigation == "bonus"){ echo "section"; }?>">
 
-			<a href="bonus-card.php"><span class="icon">&#128196;</span> Bonus Card</a>	
+			<a href="bonus-card.php"><span class="icon">&#59190;</span> Bonus Card</a>	
 
 		</li>
 
@@ -178,7 +179,7 @@ if( $findGroupId[0]['groupId'] == 0 ){
 
 		<li class="<?php if($activeNavigation == "slider"){ echo "section"; }?>">
 
-			<a href="files.php"><span class="icon">&#127748;</span> Slider</a>
+			<a href="files.php"><span class="icon">&#127916;</span> Slider</a>
 
 		</li>
 
@@ -190,25 +191,25 @@ if( $findGroupId[0]['groupId'] == 0 ){
 
 		<li class="<?php if($activeNavigation == "notice"){ echo "section"; }?>">
 
-			<a href="notice.php"><span class="icon">&#127748;</span> Notice </a>
+			<a href="notice.php"><span class="icon">&#128266;</span> Notice </a>
 
 		</li>
 
 		<li class="<?php if($activeNavigation == "blog"){ echo "section"; }?>">
 
-			<a href="blog-new.php"><span class="icon">&#59160;</span> Blog</a>
+			<a href="blog-new.php"><span class="icon">&#59392;</span> Blog</a>
 
 		</li>
 
 		<li class="<?php if($activeNavigation == "complaint"){ echo "section"; }?>">
 
-			<a href="complaint.php"><span class="icon">&#59157;</span> Complaints </a>
+			<a href="complaint.php"><span class="icon">&#128214;</span> Complaints </a>
 
 		</li>
 
 		<li class="<?php if($activeNavigation == "complaint-text"){ echo "section"; }?>">
 
-			<a href="complaint-text.php"><span class="icon">&#59157;</span> Complaints Text </a>
+			<a href="complaint-text.php"><span class="icon">&#9000;</span> Complaints Text </a>
 
 		</li>
 
@@ -230,25 +231,22 @@ if( $findGroupId[0]['groupId'] == 0 ){
 
 		</li>-->
 		<li class="">
-
-			<a href="comments-timeline-sport.php"><span class="icon">&#59157;</span>Sports Comments</a>
-
+			<a href="comments-timeline-sport.php"><span class="icon">&#9998;</span>Sports Comments</a>
 		</li>
 		<li class="">
-
-			<a href="comments-timeline-bonus.php"><span class="icon">&#59157;</span>Bonus Comments</a>
-
+			<a href="comments-timeline-bonus.php"><span class="icon">&#9998;</span>Bonus Comments</a>
 		</li>
 		<li class="">
-
-			<a href="comments-timeline-news.php"><span class="icon">&#59157;</span>News & Blog Comments</a>
-
+			<a href="comments-timeline-news.php"><span class="icon">&#9998;</span>News & Blog Comments</a>
 		</li>
 
 
 		<!-- <li><a href="statistics.html"><span class="icon">&#128202;</span> Statistics</a></li> -->
-
-		<li class="<?php if($activeNavigation == "users"){ echo "section"; }?>"><a href="users.php"><span class="icon">&#128101;</span> Users </a></li>
+		<li class="<?php if($activeNavigation == "tags"){ echo "section"; }?>">
+			<a href="tag.php"><span class="icon">&#59148;</span> Tags </a>
+		</li>
+		<li class="<?php if($activeNavigation == "users"){ echo "section"; }?>"><a href="users.php"><span class="icon">&#128100;</span> Users </a></li>
+		<li class="<?php if($activeNavigation == "userslevel"){ echo "section"; }?>"><a href="user-levelup.php"><span class="icon">&#128100;</span> Users level up <span class="pip custom-pip"><?php echo $updatecount[0]['CNT']; ?></span></a></li>
 
 	</ul>
 
