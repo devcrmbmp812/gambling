@@ -98,7 +98,8 @@ $sportsExtraText = array(
 	'61' => '[ 라이브 소액유저 추천 ]', 
 	'62' => '[ 라이브 고액유저 추천 ]', 
 	'64' => '[ 스포츠 단폴고액 추천 ]', 
-	'65' => '[ 미니게임 고액유저 추천 ]' 
+	'65' => '[ 미니게임 고액유저 추천 ]', 
+	'66' => '[ 축구 승옵배팅 가능 ]' 
 );
 
 
@@ -308,7 +309,7 @@ $sportsExtraText = array(
 								<li class="dropdown nav-dropdown">
 								  <a href="bonus/" class="dropdown-toggle text-white disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">보너스</a>
 									<ul class="dropdown-menu ask-list">
-										<li><a href="welcome-bonus/" >신규 첫충 보너스</a></li>
+										<!-- <li><a href="welcome-bonus/" >신규 첫충 보너스</a></li> -->
 										<li><a href="first-deposit-bonus/">첫충전 보너스</a></li>
 										<li><a href="every-time-bonus/" >매번 충전 보너스</a>
 										<li><a href="rolling-bonus/" >롤링 보너스</a>

@@ -136,7 +136,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 										<span class="text-capitalize"><?php echo $_SESSION['value']['0']['bonusName']; ?>&nbsp-&nbsp<?php echo $_SESSION['value']['0']['sportsName']; ?></span><br/>
 										<!-- <span class="text-capitalize"><?php echo $_SESSION['value']['0']['sportsName']; ?></span><br> -->
 
-										<span><?php echo $_SESSION['value']['0']['description']; ?></span><br>
+										<span><?php echo nl2br($_SESSION['value']['0']['description']); ?></span><br>
 
 										<!-- <span><?php echo $_SESSION['value']['0']['bonusAmount']; ?></span> -->
 
@@ -358,7 +358,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 				</div>
 
-			</div>
+			</div> 
 
 			<div class="clearfix"></div>
 
@@ -371,14 +371,9 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 						<div class="ask-page-content">
 
 							<div class="ask-page-content-header">
-
-								<h3 class="heading text-white text-uppercase">보너스 세부정보 </h3><!--  border-bottom-5 -->
-
+								<h3 class="heading text-white text-uppercase">보너스 세부정보 </h3>
 							</div>
-
 							<div class="ask-page-content-body-details" style="padding-right: 0px;"> 
-
-								<!-- <h3 class="heading text-white">Bonus Details</h3> -->
 
 								<div class="row content">
 
@@ -444,31 +439,9 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 										</tr>
 
-										<!--<?php }?>
-
-										<?php if($value['0']['rollingCondition'] !=''){?>
-
-										<tr>
-
-											<td>이용 조건 :</td>
-
-											<td><a href="bonus/?rollingCondition[]=<?php echo $value['0']['rollingCondition']; ?>"><?php echo $value['0']['rollingCondition']; ?></a></td>
-
-										</tr>
-
-										<?php }?>
-
-										<?php if($value['0']['bonusConUtilization'] !=''){?>
-
-										<tr>
-
-											<td>보너스 이용 조건 :</td>
-
-											<td><a href="bonus/?bonusConUtilization[]=<?php echo $value['0']['bonusConUtilization']; ?>"><?php echo $value['0']['bonusConUtilization']; ?> </a></td>
-
-										</tr>
-
-										<?php }?>-->
+										
+										<?php }
+										?>
 
 										<?php if($value['0']['maxBonusAmount'] !='' && $value['0']['maxBonusAmount'] != 0){?>
 
@@ -1478,13 +1451,14 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 						</div><!-- bonus code landing-->
 
 					</div><!-- col-lg-9 col-md-9 -->
+					<div class="col-lg-3 col-md-3 sticky_column" style="padding-left: 0px;">
+
+						<?php require_once('includes/sportsRecommend.php'); ?>
+
+					</div><!-- row -->
 
 				</div>
-				<div class="col-lg-3 col-md-3 sticky_column" style="padding-left: 0px;">
-
-					<?php require_once('includes/sportsRecommend.php'); ?>
-
-				</div><!-- row -->
+				
 
 			</div><!-- ask-content -->
 

@@ -90,13 +90,19 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_IDEN
 
 									<?php 
 
-									$result = $User->query("SELECT COUNT( * ) AS `count` , `status` FROM `tblComplaints` GROUP BY `status` ");
+									$result = $User->query("SELECT
+    COUNT(*) AS total, 
+    SUM(CASE WHEN `status`= 'P' THEN 1 ELSE 0 END) AS P_count,
+    SUM(CASE WHEN `status`= 'S' THEN 1 ELSE 0 END) AS S_count
+ FROM
+    `tblComplaints`");
+
 
 									?>
 
 									
 
-									<h2 class="text-center text-white complain-counter"><?php echo $result[0]['count'];?></h2>
+									<h2 class="text-center text-white complain-counter"><?php echo $result[0]['P_count'];?></h2>
 
 								</div>
 
@@ -124,7 +130,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_IDEN
 
 									<p class="text-center text-white">해결완료</p>
 
-									<h2 class="text-center text-white complain-counter"><?php echo $result[1]['count'];?></h2>
+									<h2 class="text-center text-white complain-counter"><?php echo $result[0]['S_count'];?></h2>
 
 								</div>
 
@@ -152,7 +158,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_IDEN
 
 									<p class="text-center text-white">미해결</p>
 
-									<h2 class="text-center text-white complain-counter"><?php echo $result[2]['count'];?></h2>
+									<h2 class="text-center text-white complain-counter"><?php echo $result[0]['total'] - $result[0]['S_count'] - $result[0]['P_count'] ;?></h2>
 
 								</div>
 

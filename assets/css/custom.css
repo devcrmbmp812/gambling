@@ -2961,5 +2961,48 @@ input[name="range1"]::-webkit-slider-thumb:after{
     background-color: #245894;
 }
 
+@media screen and (min-width: 768px) {
+
+	.more_span {
+		display: none;
+	}
+	.ask-custom-nav .floating-menu {
+	    overflow: hidden;
+	    position: absolute;
+	    right: 0;
+	    top: 10px;
+	    display: inline-block;
+	    text-align: left;
+	}
+	.ask-custom-nav .floating-menu a {
+		width: unset !important;
+	}
+	.resp-login, .resp-signIn {
+	    margin: 2px 5px !important;
+		padding: 5px 10px !important;
+	}
+
+
+}
+/*@media screen and (min-width: 721px){
+	
+	.ask-land-web-card > .ask-cards > .ask-item-web-card,
+	 .ask-land-web-card > .ask-cards > .ask-item-bonus-card,
+	  .ask-land-web-card > .ask-cards > .ask-item-news-card,
+	   .ask-land-web-card > .ask-cards > .ask-item-complain-card{
+		width:196px !important;
+		
+	}	
+}*/
+
+@media screen and (max-width: 1200px) {
+  .ask-land-web-card > .ask-cards > .ask-item-web-card,
+	 .ask-land-web-card > .ask-cards > .ask-item-bonus-card,
+	  .ask-land-web-card > .ask-cards > .ask-item-news-card,
+	   .ask-land-web-card > .ask-cards > .ask-item-complain-card{
+		width:190px !important;
+		
+	}	
+}
 
 /*external css for editor content*/
