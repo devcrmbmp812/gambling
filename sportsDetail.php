@@ -451,7 +451,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_COMM
 
 									<div class="ask-cards">
 
-										<div class="ask-item-web-card" style="height: 292px ! important;">
+										<div class="ask-item-web-card" style="height: 292px;">
 
 											<div class="front">
 

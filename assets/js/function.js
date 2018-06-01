@@ -1,4 +1,31 @@
 $(document).ready(function(){
+
+		// $('.tablet-complaint').click(function(){
+		// 	alert("here");
+		// 	if(localStorage.getItem("complaint_flag") != "on")
+		// 	{
+		// 		//alert("here");
+		// 		var temp = $(this).parent('li.dropdown');
+		// 		//temp.children('ul.dropdown-menu').display('block');
+
+		// 		if (typeof(Storage) !== "undefined") {
+		// 		    localStorage.setItem("complaint_flag", "on");
+		// 		} else {
+		// 		    console.log("localStorage error");
+		// 		}
+		// 		var flag = localStorage.getItem("complaint_flag");
+		// 		//alert(flag);
+		// 		redirect_complaint();	
+		// 	}
+			
+		// });
+
+		// if (localStorage.getItem("complaint_flag") == "on") {
+		// 	//alert("here");
+		// 	$('.tablet-complaint').click();
+		// 	localStorage.setItem("complaint_flag","");
+		// }
+
 		var weblink = '';
 		$('.playNow').click(function(){
 			

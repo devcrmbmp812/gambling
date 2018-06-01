@@ -218,6 +218,9 @@
 	function redirect_bonus(){
 		window.location.href = "/bonus/";
 	}
+	function redirect_complaint(){
+		window.location.href = "/complaints/";
+	}
 
 	$('#bs-example-navbar-collapse-3 li button.more_span').click(function(){
 		//alert("here");
@@ -234,6 +237,12 @@
 
 		}
 	});
+
+
+
+	
+
+
 	
 	// $.loadChat = function(cu){
 	// 	if(cu){

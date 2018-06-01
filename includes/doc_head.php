@@ -401,7 +401,7 @@ $sportsExtraText = array(
 								</li> -->
 <!-- 								<li class=""><a href="mini-game/" class="text-uppercase" style="color:#fff;">미니게임</a></li> -->
 								<li class="dropdown child-drop">
-								  <a href="javascript:void(0)" onclick="redirect_bonus();" class="dropdown-toggle text-white disabled" id="mobile_more_bonus" role="button" aria-haspopup="true" aria-expanded="false"><span class="bonus_span" onclick="window.location.href = 'bonus/';">보너스</span></a>
+								  <a href="javascript:void(0)" onclick="redirect_bonus();" class="dropdown-toggle text-white disabled" role="button" aria-haspopup="true" aria-expanded="false"><span class="bonus_span" onclick="window.location.href = 'bonus/';">보너스</span></a>
 								  <button class="more_span" style="width:72px;">펼쳐보기</button>
 								  
 									<ul class="dropdown-menu">
@@ -416,7 +416,7 @@ $sportsExtraText = array(
 									</ul>
 								</li>
 								<li class="dropdown child-drop">
-								  <a href="complaints/" class="dropdown-toggle text-uppercase text-white" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">사이트 분쟁</a>
+								  <a href="complaints/" class="dropdown-toggle text-uppercase text-white tablet-complaint" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">사이트 분쟁</a>
 									<ul class="dropdown-menu">
 										<li><a href="submit-complaint/">분쟁해결 신청하기</a></li>
 										<li><a href="complaint-open/">진행중인 분쟁</a></li>

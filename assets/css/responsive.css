@@ -32,7 +32,7 @@
 		width:80%;
 	}
 	.ask-detail-page-card > .col-md-3:nth-child(n+3){
-		display: none !important;
+		/*display: none !important;*/
 	}
 	.ask-detail-page-card > .col-md-3{
 		margin-left:15%;
@@ -93,7 +93,7 @@
 		margin-left:30%;
 	}
 	.ask-detail-page-card > .col-md-3:nth-child(n+2){
-		display:none;
+		/*display:none;*/
 	}
 	.custom-play-now.{
 		padding-top:0px !important;
@@ -838,4 +838,95 @@
 }
 .complaint-stat	.complain-logo .ask-ripple span{
 	box-shadow: 0px 0px 4px #F45C02;
+}
+
+
+@media screen and (max-width: 480px) {
+  .mobile-hide-letter {
+    display: none!important;
+  }
+  .arrow-content {
+  	width: 100%;
+  }
+
+  .notice_date_mobile:before { content: ' '; display: block; }
+}
+
+
+@media screen and (min-width: 768px) {
+
+	.more_span {
+		display: none;
+	}
+	.ask-custom-nav .floating-menu {
+	    overflow: hidden;
+	    position: absolute;
+	    right: 0;
+	    top: 10px;
+	    display: inline-block;
+	    text-align: left;
+	}
+	.ask-custom-nav .floating-menu a {
+		width: unset !important;
+	}
+	.resp-login, .resp-signIn {
+	    margin: 2px 5px !important;
+		padding: 5px 10px !important;
+	}
+
+
+
+}
+@media screen and (max-width: 768px) {
+	.tablet-complaint {
+		display: none;		
+	}
+	.child-drop ul.dropdown-menu li a{
+		color: #fff !important;
+	}
+}
+@media screen and (min-width: 992px) {
+	.tablet-complaint {
+		display: none;		
+	}	
+}
+
+
+/*@media screen and (min-width: 721px){
+	
+	.ask-land-web-card > .ask-cards > .ask-item-web-card,
+	 .ask-land-web-card > .ask-cards > .ask-item-bonus-card,
+	  .ask-land-web-card > .ask-cards > .ask-item-news-card,
+	   .ask-land-web-card > .ask-cards > .ask-item-complain-card{
+		width:196px !important;
+		
+	}	
+}*/
+
+@media screen and (max-width: 1200px) {
+	.ask-land-web-card > .ask-cards > .ask-item-web-card,
+	.ask-land-web-card > .ask-cards > .ask-item-bonus-card,
+	.ask-land-web-card > .ask-cards > .ask-item-news-card,
+	.ask-land-web-card > .ask-cards > .ask-item-complain-card{
+		width:196px !important;
+		height: 276px !important;
+	}
+
+	.ask-land-web-card > .ask-cards > .ask-item-web-card img.img-responsive,
+	.ask-item-web-card .front .cardLogo img
+	{
+		height: 132px !important;
+	}
+}
+
+
+
+@media screen and (min-width: : 768px) {
+	.child-drop ul.dropdown-menu{
+		background: transparent !important;
+	}
+	.child-drop ul.dropdown-menu li a{
+		background: transparent !important;
+		color: #fff !important;
+	}
 }

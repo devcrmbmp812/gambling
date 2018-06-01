@@ -404,7 +404,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 										<div class="ask-cards">
 
-											<div class="ask-item-web-card"  style="height: 292px ! important;">
+											<div class="ask-item-web-card"  style="height: 292px;">
 
 												<div class="front">
 
@@ -435,7 +435,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 														<?php
 														}
 														?>
-														<a href="sports-details/<?php echo $value['id'];?>/<?php echo str_replace(' ', '-', $value['sportsName']);?>/"><img src="<?php echo $value['sportsImage']; ?>" width="196px" height="149px" alt=""></a>
+														<a href="sports-details/<?php echo $value['id'];?>/<?php echo str_replace(' ', '-', $value['sportsName']);?>/"><img src="<?php echo $value['sportsImage']; ?>" style="height:149px;" alt=""></a>
 
 														<?php if($dtl == 'Verified sport'){?>
 

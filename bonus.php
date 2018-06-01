@@ -340,7 +340,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 									<div class="ask-cards">
 
-										<div class="ask-item-web-card" style="height: 292px ! important;">
+										<div class="ask-item-web-card" style="height: 292px;">
 
 										    <div class="front">
 
