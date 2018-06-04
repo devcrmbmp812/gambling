@@ -580,6 +580,9 @@
 	.complaint-stat{
 		width: 68px !important;
 	}
+	
+}
+@media only screen and (max-width: 992px) {
 	.mobile-footer .col-xs-12{
 		display: none;
 	}
