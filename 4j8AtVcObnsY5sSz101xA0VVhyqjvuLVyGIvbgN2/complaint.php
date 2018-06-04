@@ -36,7 +36,7 @@ if(isset($_GET['delete']) && trim($_GET['delete'])){
 		C::redirect(C::link('complaint.php', false, true));
 		//echo '<script>location.reload();</script>';
 	} else if($reqDelID['1'] == 'childDel') {
-		echo "DELETE FROM `tblComplaintsResponse` WHERE `id` = '" . $reqDelID[0] . "'";die();
+		//echo "DELETE FROM `tblComplaintsResponse` WHERE `id` = '" . $reqDelID[0] . "'";die();
 		$Base->query("DELETE FROM `tblComplaintsResponse` WHERE `id` = '" . $reqDelID[0] . "'");
 		C::redirect(C::link('complaint.php', false, true));
 	}
@@ -102,11 +102,11 @@ $activeNavigation = "complaint";
 								<div class="conv-singel-parent">
 									<p>
 										<?php
-										$res = $User->query("SELECT `id`, `userId` FROM `tblUser` WHERE `id` = '" . $value['userId'] . "'");
+										$res = $User->query("SELECT `id`, `userId`,`nickName` FROM `tblUser` WHERE `id` = '" . $value['userId'] . "'");
 										if(is_array($res) && count($res) > 0){
 											foreach ($res as $index => $val) {
 										?>
-										<span style="color:#000;"><strong><?php echo $val['userId']; ?>&nbsp;</strong></span>
+										<span style="color:#000;"><strong><span title="User Id"><?php echo $val['userId']; ?>&nbsp;<span title="Nick Name">(<?php echo $val['nickName']; ?>&nbsp;)</span></strong></span>
 										<span style="color:#ccc;">Playing website Account Name - </span><span><?php echo $value['onSiteAccountName']; ?></span>,
 										<span style="color:#ccc;">Email ID - </span><span><?php echo $value['onSiteEmail']; ?></span>
 										<span style="color:#ccc;">&nbsp;&nbsp;&nbsp;<?php echo $value['updatedOn']; ?></span>
@@ -164,11 +164,11 @@ $activeNavigation = "complaint";
 										<div class="conv-singel-child">
 											<p>
 												<?php
-												$res = $User->query("SELECT `id`, `userId` FROM `tblUser` WHERE `id` = '" . $response['userId'] . "'");
+												$res = $User->query("SELECT `id`, `userId`, `nickName` FROM `tblUser` WHERE `id` = '" . $response['userId'] . "'");
 												if(is_array($res) && count($res) > 0){
 													foreach ($res as $index => $val) {
 												?>
-												<span style="color:#000;"><strong><?php echo $val['userId']; ?>&nbsp;</strong></span>
+												<span style="color:#000;"><strong><span title="User Id"><?php echo $val['userId']; ?></span>&nbsp;<span title="Nick Name">(<?php echo $val['nickName']; ?>)</span></strong></span>
 												<?php
 													}
 												}
@@ -218,11 +218,11 @@ $activeNavigation = "complaint";
 								<div class="conv-singel-parent">
 									<p>
 										<?php
-										$res = $User->query("SELECT `id`, `userId` FROM `tblUser` WHERE `id` = '" . $value['userId'] . "'");
+										$res = $User->query("SELECT `id`, `userId`, `nickName` FROM `tblUser` WHERE `id` = '" . $value['userId'] . "'");
 										if(is_array($res) && count($res) > 0){
 											foreach ($res as $index => $val) {
 										?>
-										<span style="color:#000;"><strong><?php echo $val['userId']; ?>&nbsp;</strong></span>
+										<span style="color:#000;"><strong><span title="User Id"><?php echo $val['userId']; ?>&nbsp;<span title="Nick Name">(<?php echo $val['nickName']; ?>&nbsp;)</span></strong></span>
 										<span style="color:#ccc;">Playing website Account Name - </span><span><?php echo $value['onSiteAccountName']; ?></span>,
 										<span style="color:#ccc;">Email ID - </span><span><?php echo $value['onSiteEmail']; ?></span>
 										<span style="color:#ccc;">&nbsp;&nbsp;&nbsp;<?php echo $value['updatedOn']; ?></span>
@@ -280,11 +280,11 @@ $activeNavigation = "complaint";
 										<div class="conv-singel-child">
 											<p>
 												<?php
-												$res = $User->query("SELECT `id`, `userId` FROM `tblUser` WHERE `id` = '" . $response['userId'] . "'");
+												$res = $User->query("SELECT `id`, `userId`, `nickName` FROM `tblUser` WHERE `id` = '" . $response['userId'] . "'");
 												if(is_array($res) && count($res) > 0){
 													foreach ($res as $index => $val) {
 												?>
-												<span style="color:#000;"><strong><?php echo $val['userId']; ?>&nbsp;</strong></span>
+												<span style="color:#000;"><strong><span title="User Id"><?php echo $val['userId']; ?></span>&nbsp;<span title="Nick Name">(<?php echo $val['nickName']; ?>)</span></strong></span>
 												<?php
 													}
 												}
@@ -334,11 +334,11 @@ $activeNavigation = "complaint";
 								<div class="conv-singel-parent">
 									<p>
 										<?php
-										$res = $User->query("SELECT `id`, `userId` FROM `tblUser` WHERE `id` = '" . $value['userId'] . "'");
+										$res = $User->query("SELECT `id`, `userId`,`nickName` FROM `tblUser` WHERE `id` = '" . $value['userId'] . "'");
 										if(is_array($res) && count($res) > 0){
 											foreach ($res as $index => $val) {
 										?>
-										<span style="color:#000;"><strong><?php echo $val['userId']; ?>&nbsp;</strong></span>
+										<span style="color:#000;"><strong><span title="User Id"><?php echo $val['userId']; ?>&nbsp;<span title="Nick Name">(<?php echo $val['nickName']; ?>&nbsp;)</span></strong></span>
 										<span style="color:#ccc;">Playing website Account Name - </span><span><?php echo $value['onSiteAccountName']; ?></span>,
 										<span style="color:#ccc;">Email ID - </span><span><?php echo $value['onSiteEmail']; ?></span>
 										<span style="color:#ccc;">&nbsp;&nbsp;&nbsp;<?php echo $value['updatedOn']; ?></span>
@@ -396,11 +396,11 @@ $activeNavigation = "complaint";
 										<div class="conv-singel-child">
 											<p>
 												<?php
-												$res = $User->query("SELECT `id`, `userId` FROM `tblUser` WHERE `id` = '" . $response['userId'] . "'");
+												$res = $User->query("SELECT `id`, `userId`, `nickName` FROM `tblUser` WHERE `id` = '" . $response['userId'] . "'");
 												if(is_array($res) && count($res) > 0){
 													foreach ($res as $index => $val) {
 												?>
-												<span style="color:#000;"><strong><?php echo $val['userId']; ?>&nbsp;</strong></span>
+												<span style="color:#000;"><strong><span title="User Id"><?php echo $val['userId']; ?></span>&nbsp;<span title="Nick Name">(<?php echo $val['nickName']; ?>)</span></strong></span>
 												<?php
 													}
 												}

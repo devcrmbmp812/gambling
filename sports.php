@@ -448,9 +448,12 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 													<div class="cardReview text-center text-black">
 
 														<div class="rating padding-5 font16">
-
+															<?php
+															$iddd = $value['id']; 
+															echo '<p class="text-black" style="margin-bottom:2px;">'. $sportsExtraText[$iddd] .'</p>'; 
+															?>
 															<?php 
-
+																/*
 					                                    		if ($value['rating'] == 1) {
 
 				                                    			?>
@@ -491,7 +494,7 @@ if(isset($_GET['cat']) && trim($_GET['cat'])){
 
 				                                    			<?php
 
-						                                    		}
+						                                    		}*/
 
 						                                    	?>
 

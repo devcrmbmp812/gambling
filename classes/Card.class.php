@@ -2389,6 +2389,7 @@ class Card extends Base {
 
                 $fieldArray['createdBy'] = ((int)User::loggedInUserId() > 0 ? User::loggedInUserId() : 0);
 
+                $fieldArray['createdOn'] = date('Y-m-d H:i:s');
                 $fieldArray['updatedOn'] = date('Y-m-d H:i:s');
             //echo "INSERT INTO `tblComplaintsResponse` SET " . $this->prepareFieldsForInsertOrUpdate($fieldArray);die();
                 $this->query("INSERT INTO `tblComplaintsResponse` SET " . $this->prepareFieldsForInsertOrUpdate($fieldArray));

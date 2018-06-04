@@ -22,6 +22,14 @@ if ( $groupId[0]['groupId'] != 2) {
 
 ?>
 <?php require_once('includes/doc_head.php'); ?>
+<style>
+	.btn-checked{
+		border-radius: 10px;
+		background: transparent;
+		color: #ff0;
+		border:0px;
+	}
+</style>
 	<div class="ask-content" id="ask-content">
 		<div class="row">
 			<div class="col-lg-12 col-md-12">
@@ -29,16 +37,15 @@ if ( $groupId[0]['groupId'] != 2) {
 					<!-- <div class=""> -->
 					 	<div class="text-white complain-form">
 							<!-- <div class="ask-page-content"> -->
-								<div class="ask-page-content-header">
-									<h3 class="text-uppercase">사이트 분쟁해결</h3>
+								<div class="ask-page-content">
+									<div class="ask-page-content-header">
+										<h3 class="heading text-white text-uppercase">불만 사항 확인</h3><!--  border-bottom-5 -->
+									</div>
 								</div>
 								<div class="ask-page-content-body-details">
 									<?php 
-$result = $User->query("SELECT `id`,
- `userId`, `siteName`, `link`, 
- `reason`, `complaintTitle`, 
- `complaintText`, `complaintFiles`, `onSiteAccountName`, `onSiteEmail`, `isVerified`, `status` 
- FROM `tblComplaints` WHERE `siteName` = '" . $_SESSION['sitename'] . "' and checkSiteAdmin ='n' ORDER BY `updatedOn` ASC");
+									$result = $User->query("SELECT `id`, `userId`, `siteName`, `link`, `reason`, `complaintTitle`, `complaintText`, `complaintFiles`, `onSiteAccountName`, `onSiteEmail`, `isVerified`, `status`, `checkSiteAdmin` FROM `tblComplaints` WHERE `siteName` = '" . $_SESSION['sitename'] . "' ORDER BY `updatedOn` ASC");
+									// $result = $User->query("SELECT `id`, `userId`, `siteName`, `link`, `reason`, `complaintTitle`, `complaintText`, `complaintFiles`, `onSiteAccountName`, `onSiteEmail`, `isVerified`, `status`, `checkSiteAdmin` FROM `tblComplaints` WHERE `siteName` = '" . $_SESSION['sitename'] . "' AND `checkSiteAdmin` ='N' ORDER BY `updatedOn` ASC");
 										if(is_array($result) && count($result) > 0){
 											foreach ($result as $key => $value) {
 									?>
@@ -49,7 +56,15 @@ $result = $User->query("SELECT `id`,
 											if(is_array($res) && count($res) > 0){
 												foreach ($res as $index => $val) {
 											?>
-											<h5 class="page-header comment-preview-header margin-top-0"><span class="text-yellow"><?php echo $val['userId']; ?></span> 님께서 분쟁해결 신청을 하셨습니다. <a href="http://<?php echo $value['link']; ?>" target="_blank"><span class="text-success text-uppercase"> <?php echo $value['siteName']; ?></span></a></h5>
+											<h5 class="page-header comment-preview-header margin-top-0"><span class="text-yellow"><?php echo $val['userId']; ?></span> 님께서 분쟁해결 신청을 하셨습니다. <a href="<?php echo $value['link']; ?>" target="_blank"><span class="text-success text-uppercase"> <?php echo $value['siteName']; ?></span></a>
+											<?php 
+											if($value['checkSiteAdmin'] == 'Y'){
+											echo '<button type="button" class="btn-checked pull-right" disabled><i class="fa fa-check-circle" aria-hidden="true"></i> 확인한</button>';
+											}else{
+											echo '<button type="button" class="btn-checked pull-right" disabled><i class="fa fa-times-circle" aria-hidden="true"></i> 체크되지 않은</button>';
+											}
+											?>
+											</h5>
 											<?php
 												}
 											}
@@ -118,6 +133,12 @@ $result = $User->query("SELECT `id`,
 								 	</div>
 									<?php
 										}
+									}else{
+										echo '<div class="ask-page-content notification-siteAdmin">
+													<div class="row content hideOnNotification">
+														<p class="text-yellow">아직 접수 된 불만 없음.</p>
+													</div>
+												</div>';
 									}
 									?>
 							 	</div>

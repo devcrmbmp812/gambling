@@ -30,7 +30,7 @@ if(isset($_GET['detail']) && trim($_GET['detail'])){
 
 	$reqID = $_GET['detail'];
 
-	$result = $User->query("SELECT `id`, `userId`, `siteName`, `link`, `reason`, `statusText`, `complaintTitle`, `complaintText`, `complaintFiles`, `amount`, `isVerified`, `status`, `updatedOn` FROM `tblComplaints` WHERE `id` = '" . $reqID . "'");
+	$result = $User->query("SELECT `id`, `userId`, `siteName`, `link`, `reason`, `statusText`, `complaintTitle`, `complaintText`, `complaintFiles`, `amount`, `isVerified`, `status`, `updatedOn`, `createdOn` FROM `tblComplaints` WHERE `id` = '" . $reqID . "'");
 
 	if(isset($result) && is_array($result) && count($result) > 0){
 
@@ -47,7 +47,6 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 
 
     if($Card->complaintResponse($_POST, $_FILES)){
-
     	C::redirect(C::link('complaint.php', false, true));
 
     }	
@@ -250,15 +249,15 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 
 										if($_SESSION['value'][0]['status'] == 'P'){
 
-											echo "Pending";
+											echo "진행중";
 
 										} else if($_SESSION['value'][0]['status'] == 'S'){
 
-											echo "Solved";
+											echo "해결완료";
 
 										} else if($_SESSION['value'][0]['status'] == 'U'){
 
-											echo "Unsolved";
+											echo "미해결";
 
 										}
 
@@ -347,7 +346,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 
 															<span class="text-yellow margin-right-5"><?php echo $complaintUserId[0]['nickName'];?></span>
 
-															<span class="text-white hide-user-icon">(작성한 날짜 <?php echo $_SESSION['value'][0]['updatedOn']; ?>)</span>
+															<span class="text-white hide-user-icon">(작성한 날짜 <?php echo $_SESSION['value'][0]['createdOn']; ?>)</span>
 
 															<?php
 
@@ -378,7 +377,6 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 																		<ul class="compliant-img">
 
 																		<?php
-
 																		if($_SESSION['value'][0]['complaintFiles'] != ''){
 
 																			$filesComplaint = json_decode($_SESSION['value'][0]['complaintFiles']);
@@ -387,7 +385,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 
 																			<li>
 
-																				<a href="<?php echo $img ;?>" target="_blank"><img src="<?php echo $img;?>" class="img-responsive" width="150px" height="90px" alt=""></a>
+																				<a class="fancybox" href="<?php echo $img ;?>" target="_blank"><img src="<?php echo $img;?>" class="img-responsive" width="135px" height="90px" alt=""></a>
 
 																			</li>
 
@@ -427,7 +425,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 
 								<?php
 
-									$res = $User->query("SELECT `id`, `siteName`, `userId`, `siteName`, `responsText`, `responsFiles`, `updatedOn` FROM `tblComplaintsResponse` WHERE `isVerified` = 'Y' AND `complaintId` = '" . $_SESSION['value'][0]['id'] . "'");
+									$res = $User->query("SELECT `id`, `siteName`, `userId`, `siteName`, `responsText`, `responsFiles`, `updatedOn`, `createdOn` FROM `tblComplaintsResponse` WHERE `isVerified` = 'Y' AND `complaintId` = '" . $_SESSION['value'][0]['id'] . "'");
 
 									if(isset($res) && is_array($res) && count($res) > 0){
 
@@ -446,11 +444,13 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 												if($icon[0]['groupId'] == 3){
 
 													$n = $icon[0]['nickName'];
+													$UsrEditPost = true;
 													echo '<img src="images/user/default_user.png" class="user-complaint img-circle" alt="" title="'.$complaintUserId[0]["nickName"].'" />';
 
 												} else if($icon[0]['groupId'] == 2){ 
 
 													$n = $icon[0]['siteName'];
+													$siteadminEditPost = true;
 													echo '<img src="'. $icon[0]['profile_img'] .'" class="user-complaint img-circle" alt="" title="'. $icon[0]['siteName'] .'" />';
 												?>
 
@@ -458,8 +458,9 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 
 											<?php } else { 
 
-													$n = 'Betting Time Admin';
-													echo '<img src="images/user/admin.png" class="user-complaint img-circle" alt="" title="Betting Time Admin" />';
+													$n = '배팅타임 운영자';
+													$AdminPostEdit = true;
+													echo '<img src="images/user/admin.png" class="user-complaint img-circle" alt="" title="배팅타임 운영자" />';
 												?>
 
 											<?php } ?>
@@ -482,7 +483,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 
 															<span class="text-yellow margin-right-5"><?php echo $n; ?></span>
 
-															<span class="text-white hide-user-icon">(작성한 날짜 <?php echo $val['updatedOn']; ?>)</span>
+															<span class="text-white hide-user-icon">(작성한 날짜 <?php echo $val['createdOn']; ?>)</span>
 
 															<?php
 
@@ -494,11 +495,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 
 															<span class="pull-right" style="margin-top:-3px;color:#000;"><button type="button" class="btn btn-xs" id="deleteComplain" data-tabelName="tblComplaintsResponse" data-attrId="<?php echo $val['id'];?>">삭제하기</button></span>
 
-															<?php
-
-															}
-
-															?>
+															<?php } ?>
 
 														</h5>
 
@@ -508,7 +505,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 
 																<tr>
 
-																	<td style="padding-bottom:10px;">
+																	<td style="padding-bottom:10px;" class="text-reponse-wihimg">
 
 																		<?php echo $val['responsText']; ?>
 
@@ -519,16 +516,31 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 																		?>
 
 																		<hr>
-
 																		<ul class="compliant-img">
 
+																			<?php
 
+																			if($val['responsFiles'] != ''){
 
-																			<li>
+																				$filesComplaint = json_decode($val['responsFiles']);
 
-																				<img src="<?php echo $val['responsFiles'] ;?>" class="img-responsive" alt="">
+																				foreach ($filesComplaint as $img) {?>
 
-																			</li>
+																				<li>
+
+																					<a class="fancybox" href="<?php echo $img ;?>"><img src="<?php echo $img;?>" class="img-responsive" width="130px" height="90px" alt=""></a>
+
+																				</li>
+
+																			<?php
+
+																				}
+
+																			?>
+
+																			
+
+																		<?php } ?>
 
 																		</ul>
 
@@ -572,7 +584,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 
 						$logedInID = (int)User::loggedInUserId() > 0 ? User::loggedInUserId() : 0;
 
-						 if( $logedInID == $_SESSION['value'][0]['userId']){
+						 if($logedInID == $_SESSION['value'][0]['userId']){
 
 						 	$User->query("UPDATE `tblComplaintsResponse` SET `checkUser` = 'Y' WHERE `complaintId` = '" . $_SESSION['value'][0]['id'] . "'");
 
@@ -593,8 +605,49 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 											<input type="hidden" name="complaintId" value="<?php echo $_SESSION['value'][0]['id']; ?>" />
 
 											<input type="hidden" name="id" value="<?php echo $complaintUserId[0]['id']; ?>" />
+											
+											<div id="toolbar" class="min-editor" style="display: none;">
+												<a data-wysihtml5-command="bold" class="btn btn-xs text-white btn-tools" title="CTRL+B"><i class="fa fa-bold" aria-hidden="true"></i></a>
+												<a data-wysihtml5-command="italic" class="btn btn-xs text-white btn-tools" title="CTRL+I"><i class="fa fa-italic" aria-hidden="true"></i></a>
+												<a data-wysihtml5-command="createLink" class="btn text-white btn-xs btn-tools"><i class="fa fa-link" aria-hidden="true"></i></a>
+												<a data-wysihtml5-command="insertImage" class="btn btn-xs text-white btn-tools"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+												<!-- <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1" class="btn btn-xs btn-tools">h1</a>
+												<a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2" class="btn btn-xs btn-tools">h2</a> -->
+												<a data-wysihtml5-command="insertUnorderedList" class="btn btn-xs text-white btn-tools"><i class="fa fa-list" aria-hidden="true"></i></a>
+												<a data-wysihtml5-command="insertOrderedList" class="btn btn-xs text-white btn-tools"><i class="fa fa-list-ol" aria-hidden="true"></i></a>
+												<!-- <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red" class="btn btn-xs btn-tools">red</a>
+												<a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green" class="btn btn-xs btn-tools">green</a>
+												<a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue" class="btn btn-xs btn-tools">blue</a> -->
+												<a data-wysihtml5-command="insertSpeech" class="btn btn-xs text-white btn-tools">speech</a>
+												<!-- <a data-wysihtml5-action="change_view" class="btn btn-danger btn-xs">switch to html view</a> -->
 
-											<textarea name="responsText" id="" width="100%" rows="5" required></textarea>
+
+												<div data-wysihtml5-dialog="createLink" style="display: none;">
+													<label>
+													<span class="text-white">Link:</span>
+													<input data-wysihtml5-dialog-field="href" value="http://" style="height:22px;">
+													</label>
+													<a data-wysihtml5-dialog-action="save" class="btn btn-danger btn-xs">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel" class="btn btn-info btn-xs">CANCEL</a>
+												</div>
+
+												<div data-wysihtml5-dialog="insertImage" style="display: none;">
+												  	<label>
+												    	<span class="text-white">Image:</span>
+												    	<input data-wysihtml5-dialog-field="src" class="" style="height:22px;" value="http://">
+												  	</label>
+												    <label>
+												        <span class="text-white">Align:</span>
+												        <select data-wysihtml5-dialog-field="className" class="" style="height:22px;">
+												          <option value="">default</option>
+												          <option value="wysiwyg-float-left">left</option>
+												          <option value="wysiwyg-float-right">right</option>
+												        </select>
+												    </label>
+												  	<a data-wysihtml5-dialog-action="save" class="btn btn-danger btn-xs">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel" class="btn btn-info btn-xs">CANCEL</a>
+											    </div>
+											    
+											</div>
+											<textarea name="responsText" id="min-text" class="text-white" width="100%" rows="5" required></textarea>
 
 										</div>
 
@@ -932,7 +985,6 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['ident
 					</div>
 
 				</div><!-- row -->
-
 			</div><!-- ask-content -->
 
 		</div><!-- parent-container -->

@@ -91,11 +91,11 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_IDEN
 									<?php 
 
 									$result = $User->query("SELECT
-    COUNT(*) AS total, 
-    SUM(CASE WHEN `status`= 'P' THEN 1 ELSE 0 END) AS P_count,
-    SUM(CASE WHEN `status`= 'S' THEN 1 ELSE 0 END) AS S_count
- FROM
-    `tblComplaints`");
+										    COUNT(*) AS total, 
+										    SUM(CASE WHEN `status`= 'P' THEN 1 ELSE 0 END) AS P_count,
+										    SUM(CASE WHEN `status`= 'S' THEN 1 ELSE 0 END) AS S_count
+										 FROM
+										    `tblComplaints`");
 
 
 									?>
@@ -448,7 +448,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_IDEN
 									 				<div class="form-group">
 
 									 					<select class="form-control" id="sel2" name="link" required>
-
+									 						<option value="">Select Site Name</option>
 													    <?php
 
 															$res = $User->query("SELECT `siteName`, `link` FROM `tblWebCards` GROUP BY `siteName`");
@@ -460,7 +460,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_IDEN
 														?>
 
 													    	<!-- <option value="<?php echo $data['link'].'/'.$data['siteName']; ?>"><?php echo $data['siteName']; ?></option> -->
-
+													    	
 													    	<option value="<?php echo $data['link']; ?>"><?php echo $data['siteName']; ?></option>
 
 												    	<?php
@@ -478,8 +478,49 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_IDEN
 									 				</div>
 
 									 				<div class="form-group">
+									 					<div id="toolbar" class="min-editor" style="display: none;">
+												<a data-wysihtml5-command="bold" class="btn btn-xs text-white btn-tools" title="CTRL+B"><i class="fa fa-bold" aria-hidden="true"></i></a>
+												<a data-wysihtml5-command="italic" class="btn btn-xs text-white btn-tools" title="CTRL+I"><i class="fa fa-italic" aria-hidden="true"></i></a>
+												<a data-wysihtml5-command="createLink" class="btn text-white btn-xs btn-tools"><i class="fa fa-link" aria-hidden="true"></i></a>
+												<a data-wysihtml5-command="insertImage" class="btn btn-xs text-white btn-tools"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+												<!-- <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1" class="btn btn-xs btn-tools">h1</a>
+												<a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2" class="btn btn-xs btn-tools">h2</a> -->
+												<a data-wysihtml5-command="insertUnorderedList" class="btn btn-xs text-white btn-tools"><i class="fa fa-list" aria-hidden="true"></i></a>
+												<a data-wysihtml5-command="insertOrderedList" class="btn btn-xs text-white btn-tools"><i class="fa fa-list-ol" aria-hidden="true"></i></a>
+												<!-- <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red" class="btn btn-xs btn-tools">red</a>
+												<a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green" class="btn btn-xs btn-tools">green</a>
+												<a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue" class="btn btn-xs btn-tools">blue</a> -->
+												<a data-wysihtml5-command="insertSpeech" class="btn btn-xs text-white btn-tools">speech</a>
+												<!-- <a data-wysihtml5-action="change_view" class="btn btn-danger btn-xs">switch to html view</a> -->
 
-									 					<textarea name="complaintText" id="" rows="3" style="width:100%;" placeholder="내용" required></textarea>
+
+												<div data-wysihtml5-dialog="createLink" style="display: none;">
+													<label>
+													<span class="text-white">Link:</span>
+													<input data-wysihtml5-dialog-field="href" value="http://" style="height:22px;">
+													</label>
+													<a data-wysihtml5-dialog-action="save" class="btn btn-danger btn-xs">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel" class="btn btn-info btn-xs">CANCEL</a>
+												</div>
+
+												<div data-wysihtml5-dialog="insertImage" style="display: none;">
+												  	<label>
+												    	<span class="text-white">Image:</span>
+												    	<input data-wysihtml5-dialog-field="src" class="" style="height:22px;" value="http://">
+												  	</label>
+												    <label>
+												        <span class="text-white">Align:</span>
+												        <select data-wysihtml5-dialog-field="className" class="" style="height:22px;">
+												          <option value="">default</option>
+												          <option value="wysiwyg-float-left">left</option>
+												          <option value="wysiwyg-float-right">right</option>
+												        </select>
+												    </label>
+												  	<a data-wysihtml5-dialog-action="save" class="btn btn-danger btn-xs">OK</a>&nbsp;<a data-wysihtml5-dialog-action="cancel" class="btn btn-info btn-xs">CANCEL</a>
+											    </div>
+											    
+											</div>
+
+									 					<textarea name="complaintText" id="min-text" rows="3" style="width:100%;" placeholder="내용" required></textarea>
 
 									 				</div>
 
