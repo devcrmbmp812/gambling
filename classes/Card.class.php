@@ -1777,11 +1777,11 @@ class Card extends Base {
 
         if(!isset($id) || trim($id) == ''){
 
-            Message::addMessage("PLEASE TRY AGAIN LATER", ERR);
+            Message::addMessage("다음에 다시 시도해주세요. 지속적으로 문제가 발생할 경우, 라이브 채팅으로 문의 부탁드립니다.", ERR);
 
         } else if(!isset($array['checkPost']) || trim($array['checkPost']) == ''){
 
-            Message::addMessage("Please Select the Terms and condition check box to post you comment.", ERR);
+            Message::addMessage("체크박스를 클릭하셔야 댓글을 작성하실 수 있습니다.", ERR);
 
         } else {
 
@@ -1821,7 +1821,7 @@ class Card extends Base {
 
             }
 
-			Message::addMessage("Your comment will be displayed after verify by admin.", SUCCS);
+			Message::addMessage("방금 작성하신 댓글은 관리자의 승인 후, 등록됩니다.", SUCCS);
 
 			return true;
 
@@ -1835,11 +1835,11 @@ class Card extends Base {
 
         if(!isset($id) || trim($id) == ''){
 
-            echo "PLEASE TRY AGAIN LATER.";
+            echo "다음에 다시 시도해주세요. 지속적으로 문제가 발생할 경우, 라이브 채팅으로 문의 부탁드립니다.";
 
         } else if(!isset($array['checkPost']) || trim($array['checkPost']) == ''){
 
-            echo "Please Select the Terms and condition check box to post you comment.";
+            echo "체크박스를 클릭하셔야 댓글을 작성하실 수 있습니다.";
 
         } else {
 
@@ -2093,7 +2093,7 @@ class Card extends Base {
 
         } else if(!isset($array['complaintTitle']) || trim($array['complaintTitle']) == ''){
 
-            Message::addMessage("Please provide a Title or your complaint.", ERR);
+            Message::addMessage("분쟁 제목을 입력해주세요.", ERR);
 
         } else if(!isset($array['link']) || trim($array['link']) == ''){
 
@@ -2396,7 +2396,7 @@ class Card extends Base {
 
             }
 
-            Message::addMessage("Your Response is posted successfully.It will display after verification!!!", SUCCS);
+            Message::addMessage("성공적으로 작성 됐습니다. 방금 작성하신 글은 관리자의 승인 후, 등록됩니다.", SUCCS);
 
             return true;
 

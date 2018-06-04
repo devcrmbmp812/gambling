@@ -448,7 +448,7 @@ if(isset($_POST) && is_array($_POST) && count($_POST) > 0 && isset($_POST['_IDEN
 									 				<div class="form-group">
 
 									 					<select class="form-control" id="sel2" name="link" required>
-									 						<option value="">Select Site Name</option>
+									 						<option value="">사이트명을 선택해주세요.</option>
 													    <?php
 
 															$res = $User->query("SELECT `siteName`, `link` FROM `tblWebCards` GROUP BY `siteName`");
